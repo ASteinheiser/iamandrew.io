@@ -1,0 +1,41 @@
+.top-bar-container {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  padding: 10px 20px;
+
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: space-between;
+
+  .top-bar-logo {
+    height: 50px;
+    width: 50px;
+
+    cursor: pointer;
+  }
+
+  .top-bar-item-container {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+  }
+
+  .top-bar-item {
+    font-size: 24px;
+    padding: 0 15px;
+
+    cursor: pointer;
+
+    &:hover {
+      color: var(--purple);
+    }
+  }
+
+  .active {
+    color: var(--purple);
+  }
+}
