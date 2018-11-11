@@ -1,28 +1,19 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+import Logo from './logo.svg';
+
+const App = (props) => {
+  return(
+    <React.Fragment>
+      <div style={{fontSize: 36, padding: 50}}>
+        {'This should be roboto font!!!'}
       </div>
-    );
-  }
+      <div style={{fontSize: 36, padding: 50, fontFamily: 'Montserrat', color: 'var(--purple)'}}>
+        {'This should be montserrat font!!!'}
+      </div>
+      <img src={Logo} alt='logo' />
+    </React.Fragment>
+  )
 }
 
 export default App;
