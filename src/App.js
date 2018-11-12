@@ -27,29 +27,31 @@ const App = (props) => {
 
       <TopBar active={active} navigate={navigate} />
 
-      <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'home')}>
-        <div style={{height: 500}} name={'home'}>
-          {'home!!!!'}
-        </div>
-      </VisibilitySensor>
+      <div className='max-width'>
+        <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'home')}>
+          <div style={{height: 500}} name={'home'}>
+            {'home!!!!'}
+          </div>
+        </VisibilitySensor>
 
-      <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'work')}>
-        <div style={{height: 500}} name={'work'}>
-          {'WORK!!!!'}
-        </div>
-      </VisibilitySensor>
+        <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'work')}>
+          <div style={{height: 500}} name={'work'}>
+            {'WORK!!!!'}
+          </div>
+        </VisibilitySensor>
 
-      <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'about')}>
-        <div style={{height: 500}} name={'about'}>
-          {'ABOUT!!!!'}
-        </div>
-      </VisibilitySensor>
+        <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'about')}>
+          <div style={{height: 500}} name={'about'}>
+            {'ABOUT!!!!'}
+          </div>
+        </VisibilitySensor>
 
-      <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'contact')}>
-        <div style={{height: 500}} name={'contact'}>
-          {'CONTACT!!!!'}
-        </div>
-      </VisibilitySensor>
+        <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'contact')}>
+          <div style={{height: 500}} name={'contact'}>
+            {'CONTACT!!!!'}
+          </div>
+        </VisibilitySensor>
+      </div>
     </React.Fragment>
   )
 }
