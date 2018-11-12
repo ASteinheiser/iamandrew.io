@@ -18,8 +18,6 @@ const App = (props) => {
   }, []); // call this effect only on mount
 
   function navigate(section) {
-    setActive(section);
-
     scroller.scrollTo(section, {
       duration: 800,
       delay: 0,
@@ -28,7 +26,9 @@ const App = (props) => {
   }
 
   function changeVisible(isVisible, section) {
-    console.log(section + ' is ' + isVisible);
+    if(isVisible) {
+      setActive(section);
+    }
   }
 
   return(
