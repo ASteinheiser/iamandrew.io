@@ -43,3 +43,19 @@
     color: var(--purple);
   }
 }
+
+@media(max-width: 800px) {
+  .top-bar-container {
+    padding: 10px 10px;
+
+    .top-bar-logo {
+      height: 40px;
+      width: 40px;
+    }
+
+    .top-bar-item {
+      font-size: 18px;
+      padding: 0 10px;
+    }
+  }
+}
