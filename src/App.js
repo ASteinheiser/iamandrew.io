@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { scroller }        from 'react-scroll';
 import VisibilitySensor    from 'react-visibility-sensor';
 
-import TopBar from './components/TopBar';
+import InteractiveStars from './components/InteractiveStars';
+import TopBar           from './components/TopBar';
 
 const App = (props) => {
 
@@ -27,13 +28,11 @@ const App = (props) => {
 
       <TopBar active={active} navigate={navigate} />
 
-      <div className='max-width'>
-        <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'home')}>
-          <div style={{height: 500}} name={'home'}>
-            {'home!!!!'}
-          </div>
-        </VisibilitySensor>
+      <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'home')}>
+        <InteractiveStars />
+      </VisibilitySensor>
 
+      <div className='max-width'>
         <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'work')}>
           <div style={{height: 500}} name={'work'}>
             {'WORK!!!!'}
