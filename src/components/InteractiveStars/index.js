@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './interactive-stars.scss';
 
 const HEIGHT_PERCENT = 0.8; // 80% height
-const MAX_DISTANCE = 40; // default: 50
+const MAX_DISTANCE = 50; // default: 50
 const BG_SPEED = 0; // default: 0
 const DOT_SPEED = -10; // default: 0
 const STAR_COUNT = 100; // default: 80
