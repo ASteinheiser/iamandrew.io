@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import TypingText from '../TypingText';
+
 import './interactive-stars.scss';
 
 const HEIGHT_PERCENT = 0.8; // 80% height
@@ -156,7 +158,7 @@ export default class InteractiveStars extends Component {
       requestAnimationFrame(animate);
     }
 
-    window.onmousemove = function(e) {
+    function mouseMove(e) {
       mouseMoving = true;
       mouseX = e.layerX;
       mouseY = e.layerY;
@@ -165,6 +167,10 @@ export default class InteractiveStars extends Component {
         mouseMoving = false;
       }, 100);
     }
+
+    this.mouseMove = mouseMove;
+
+    this.refs.canvas.addEventListener('mousemove', this.mouseMove)
 
     function drawIfMouseMoving(){
       if (!mouseMoving) return;
@@ -198,10 +204,18 @@ export default class InteractiveStars extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.refs.canvas.addEventListener('mousemove', this.mouseMove);
+  }
+
   render() {
     return(
       <div name={this.props.name} className='interactive-stars-container'>
+
         <canvas id='canvas' ref='canvas'/>
+
+        <TypingText />
+
       </div>
     );
   }

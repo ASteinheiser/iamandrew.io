@@ -1,0 +1,18 @@
+.typing-text-container {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+
+  font-family: 'Montserrat';
+  font-size: 48px;
+
+  user-select: none;
+
+  .typing-text-main {
+    color: var(--gray);
+  }
+
+  .typing-text-accent {
+    color: var(--purple);
+  }
+}
