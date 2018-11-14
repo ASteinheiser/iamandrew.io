@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './interactive-stars.scss';
 
 const HEIGHT_PERCENT = 0.8; // 80% height
-const MAX_DISTANCE = 50; // default: 50
+const MAX_DISTANCE = 40; // default: 50
 const BG_SPEED = 0; // default: 0
 const DOT_SPEED = -10; // default: 0
 const STAR_COUNT = 100; // default: 80
@@ -40,13 +40,13 @@ export default class InteractiveStars extends Component {
       this.id = id;
       this.x = x;
       this.y = y;
-      this.r = Math.floor(Math.random()*5)+1;
+      this.r = Math.floor(Math.random() * 5) + 3;
       this.maxLinks = 2;
       this.speed = .5;
       this.a = .5;
       this.aReduction = .005;
-      this.color = "rgba(255,255,255,"+this.a+")";
-      this.linkColor = "rgba(255,255,255,"+this.a/4+")";
+      this.color = "rgba(73,47,159,1)";
+      this.linkColor = "rgba(124,124,124,"+this.a+")";
 
       this.dir = Math.floor(Math.random()*140)+200;
     }
@@ -54,6 +54,7 @@ export default class InteractiveStars extends Component {
     Dot.prototype.draw = function() {
       ctx.fillStyle = this.color;
       ctx.shadowBlur = this.r * 2;
+      ctx.shadowColor = "rgb(73,47,159)";
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
       ctx.closePath();
@@ -67,6 +68,7 @@ export default class InteractiveStars extends Component {
       var previousDot3 = getPreviousDot(this.id, 3);
       if (!previousDot1) return;
       ctx.strokeStyle = this.linkColor;
+      ctx.lineWidth = 2;
       ctx.moveTo(previousDot1.x, previousDot1.y);
       ctx.beginPath();
       ctx.lineTo(this.x, this.y);
@@ -88,8 +90,8 @@ export default class InteractiveStars extends Component {
         this.die();
         return
       }
-      this.color = "rgba(255,255,255,"+this.a+")";
-      this.linkColor = "rgba(255,255,255,"+this.a/4+")";
+      this.color = "rgba(73,47,159,1)";
+      this.linkColor = "rgba(124,124,124,"+this.a+")";
       this.x = this.x + Math.cos(degToRad(this.dir))*(this.speed+params.dotsSpeed/100);
       this.y = this.y + Math.sin(degToRad(this.dir))*(this.speed+params.dotsSpeed/100);
 
@@ -198,8 +200,8 @@ export default class InteractiveStars extends Component {
 
   render() {
     return(
-      <div className='interactive-stars-container'>
-        <canvas className='no-cursor' id='canvas' ref='canvas'/>
+      <div name={this.props.name} className='interactive-stars-container'>
+        <canvas id='canvas' ref='canvas'/>
       </div>
     );
   }

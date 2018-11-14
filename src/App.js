@@ -29,7 +29,7 @@ const App = (props) => {
       <TopBar active={active} navigate={navigate} />
 
       <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'home')}>
-        <InteractiveStars />
+        <InteractiveStars name={'home'} />
       </VisibilitySensor>
 
       <div className='max-width'>
