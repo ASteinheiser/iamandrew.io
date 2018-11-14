@@ -13,7 +13,8 @@ const App = (props) => {
     scroller.scrollTo(section, {
       duration: 800,
       delay: 0,
-      smooth: 'easeInOutQuart'
+      smooth: 'easeInOutQuart',
+      offset: -70
     });
   }
 
