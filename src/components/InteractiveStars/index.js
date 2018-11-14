@@ -156,10 +156,10 @@ export default class InteractiveStars extends Component {
       requestAnimationFrame(animate);
     }
 
-    window.onmousemove = function(e){
+    window.onmousemove = function(e) {
       mouseMoving = true;
-      mouseX = e.clientX;
-      mouseY = e.clientY;
+      mouseX = e.layerX;
+      mouseY = e.layerY;
       clearInterval(mouseMoveChecker);
       mouseMoveChecker = setTimeout(function() {
         mouseMoving = false;
