@@ -36,11 +36,13 @@
 
     &:hover {
       color: var(--purple);
+      font-weight: 500;
     }
   }
 
   .active {
     color: var(--purple);
+    font-weight: 500;
   }
 }
 
