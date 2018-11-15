@@ -8,11 +8,33 @@
 
   user-select: none;
 
-  .typing-text-main {
-    color: var(--gray);
-  }
+  display: flex;
+  flex-direction: row;
 
-  .typing-text-accent {
-    color: var(--purple);
+  .typewrite {
+    .typing-text-static {
+      color: var(--gray);
+    }
+
+    .wrap {
+      color: var(--purple);
+    }
+
+    .blink-cursor {
+      font-size: 56px;
+      color: var(--purple);
+
+      animation: blinkCursor .75s steps(1) infinite;
+    }
+  }
+}
+
+@keyframes blinkCursor {
+  50% { color: transparent; }
+}
+
+@media(max-width: 800px) {
+  .typing-text-container {
+    flex-direction: column;
   }
 }
