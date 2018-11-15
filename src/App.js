@@ -3,6 +3,7 @@ import { scroller }        from 'react-scroll';
 import VisibilitySensor    from 'react-visibility-sensor';
 
 import InteractiveStars from './components/InteractiveStars';
+import MyWork           from './components/MyWork';
 import TopBar           from './components/TopBar';
 
 const App = (props) => {
@@ -35,9 +36,7 @@ const App = (props) => {
 
       <div className='max-width'>
         <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'work')}>
-          <div style={{height: 500}} name={'work'}>
-            {'WORK!!!!'}
-          </div>
+          <MyWork name={'work'} />
         </VisibilitySensor>
 
         <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'about')}>
