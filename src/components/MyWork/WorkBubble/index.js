@@ -7,9 +7,14 @@ const WorkBubble = (props) => {
   const { image, link, title } = props.data;
 
   return(
-    <a href={link} target='_blank' className='work-bubble-container'>
+    <a href={link}
+      target='_blank'
+      rel='noopener noreferrer'
+      className='work-bubble-container'>
 
-      <img src={image} alt={title} className='project-image' />
+      <img src={image}
+        alt={title}
+        className='project-image' />
 
       <div className='hover-title'>
         { title }
