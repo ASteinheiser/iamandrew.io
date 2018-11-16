@@ -20,11 +20,7 @@ TextType.prototype.tick = function() {
     this.text = fullText.substring(0, this.text.length + 1);
   }
 
-  this.el.innerHTML = `
-    <span class='typing-text-static'>I AM</span>
-    <span class='wrap'>${this.text}</span>
-    <span class='blink-cursor'>_</span>
-  `;
+  this.el.innerHTML = this.text;
 
   var self = this;
   var delta = 200 - Math.random() * 100;

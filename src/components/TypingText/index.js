@@ -14,7 +14,7 @@ const TYPING_TEXT = [
 const TypingText = (props) => {
 
   window.onload = function() {
-    var elements = document.getElementsByClassName('typewrite');
+    var elements = document.getElementsByClassName('wrap');
 
     for (var i=0; i<elements.length; i++) {
       new TextType(elements[i], TYPING_TEXT);
@@ -25,7 +25,7 @@ const TypingText = (props) => {
     <div className='typing-text-container'>
 
       <div className='typewrite'>
-        <span className='typing-text-static'>I AM</span>
+        <span className='typing-text-static'>I AM </span>
         <span className='wrap'></span>
         <span className='blink-cursor'>_</span>
       </div>
