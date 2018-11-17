@@ -15,15 +15,15 @@ const AboutMe = (props) => {
         {'MY SKILLS'}
       </div>
 
-      <SkillBar title='React & React Native' width='90%' />
+      <SkillBar title='React & React Native' width='95%' />
 
-      <SkillBar title='Node.js & Express' width='90%' />
+      <SkillBar title='Node.js & Express' width='95%' />
 
-      <SkillBar title='Databases (MySQL, Dynamo)' width='80%' />
+      <SkillBar title='Databases (MySQL, Dynamo)' width='85%' />
 
-      <SkillBar title='Amazon Web Services' width='70%' />
+      <SkillBar title='Amazon Web Services' width='80%' />
 
-      <SkillBar title='UI Design (Sketch, Ps)' width='60%' />
+      <SkillBar title='UI Design (Sketch, Ps)' width='75%' />
 
       <div className='title' style={{paddingTop: 50}}>
         {'MY JOURNEY'}
