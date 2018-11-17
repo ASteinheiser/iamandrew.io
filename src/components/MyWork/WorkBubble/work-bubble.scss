@@ -1,15 +1,61 @@
 .work-bubble-container {
 
+  position: relative;
+
   text-decoration: none;
 
   width: 30%;
-  height: auto;
+  height: 200px;
 
-  .project-image {
-    height: auto;
-    width: 100%;
+  margin: 10px 0;
+  border-radius: 5px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: all 0.5s ease-out;
+
+  &:hover {
+
+    transform: scale(1.1);
+
+    .hover-title {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      color: var(--white);
+      background: rgba(0, 0, 0, 0.75);
+
+      border-radius: 5px;
+    }
   }
+
   .hover-title {
-    display: none;
+    font-size: 20px;
+    color: transparent;
+
+    padding: 25px;
+  }
+}
+
+@media(max-width: 1000px) {
+  .work-bubble-container {
+    width: 45%;
+  }
+}
+
+@media(max-width: 600px) {
+  .work-bubble-container {
+    width: 90%;
   }
 }

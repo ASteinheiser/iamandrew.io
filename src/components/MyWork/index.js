@@ -6,22 +6,27 @@ import WorkBubble from './WorkBubble';
 import './my-work.scss';
 
 const MyWork = (props) => {
+
+  const { name } = props;
+
   return(
-    <div className='my-work-container' name={props.name}>
+    <div name={name} className='my-work-container'>
 
       <div className='title'>
         {'MY WORK'}
       </div>
 
-      {
-        Object.keys(Projects).reverse().map(key => {
-          return (
-            <WorkBubble
-              key={key}
-              data={Projects[key]} />
-          );
-        })
-      }
+      <div className='bubble-container'>
+        {
+          Object.keys(Projects).reverse().map(key => {
+            return (
+              <WorkBubble
+                key={key}
+                data={Projects[key]} />
+            );
+          })
+        }
+      </div>
 
     </div>
   );

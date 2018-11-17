@@ -10,15 +10,13 @@ const WorkBubble = (props) => {
     <a href={link}
       target='_blank'
       rel='noopener noreferrer'
+      style={{backgroundImage: `url(${image})`}}
       className='work-bubble-container'>
-
-      <img src={image}
-        alt={title}
-        className='project-image' />
 
       <div className='hover-title'>
         { title }
       </div>
+
     </a>
   );
 }
