@@ -24,6 +24,10 @@ const AboutMe = (props) => {
 
       <SkillBar title='UI Design (Sketch, Ps)' width='60%' />
 
+      <div className='title' style={{paddingTop: 50}}>
+        {'MY JOURNEY'}
+      </div>
+
     </div>
   );
 }
