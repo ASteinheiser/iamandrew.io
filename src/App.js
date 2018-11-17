@@ -7,6 +7,23 @@ import InteractiveStars from './components/InteractiveStars';
 import MyWork           from './components/MyWork';
 import TopBar           from './components/TopBar';
 
+const Sensor = (props) => {
+
+  const { children } = props;
+
+  return(
+    <VisibilitySensor
+      minTopValue={300}
+      partialVisible={true}
+      partialVisibility={'top'}
+      {...props}>
+
+      { children }
+
+    </VisibilitySensor>
+  );
+}
+
 const App = (props) => {
 
   const [active, setActive] = useState('home');
@@ -31,24 +48,24 @@ const App = (props) => {
 
       <TopBar active={active} navigate={navigate} />
 
-      <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'home')}>
+      <Sensor onChange={(isVisible) => changeVisible(isVisible, 'home')}>
         <InteractiveStars name={'home'} />
-      </VisibilitySensor>
+      </Sensor>
 
       <div className='max-width'>
-        <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'work')}>
+        <Sensor onChange={(isVisible) => changeVisible(isVisible, 'work')}>
           <MyWork name={'work'} />
-        </VisibilitySensor>
+        </Sensor>
 
-        <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'about')}>
+        <Sensor onChange={(isVisible) => changeVisible(isVisible, 'about')}>
           <AboutMe name={'about'} />
-        </VisibilitySensor>
+        </Sensor>
 
-        <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'contact')}>
+        <Sensor onChange={(isVisible) => changeVisible(isVisible, 'contact')}>
           <div style={{height: 500}} name={'contact'}>
-            {'CONTACT!!!!'}
+            {"CONTACT"}
           </div>
-        </VisibilitySensor>
+        </Sensor>
       </div>
     </React.Fragment>
   )

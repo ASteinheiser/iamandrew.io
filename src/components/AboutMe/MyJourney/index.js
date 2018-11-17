@@ -4,7 +4,9 @@ import './my-journey.scss';
 
 const MyJourney = (props) => {
   return(
-    null
+    <div>
+      {'My journey'}
+    </div>
   );
 }
 
