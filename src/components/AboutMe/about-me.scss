@@ -16,3 +16,11 @@
     border-bottom: 2px solid var(--gray);
   }
 }
+
+@media(max-width: 800px) {
+  .about-me-container {
+    .title {
+      font-size: 40px;
+    }
+  }
+}
