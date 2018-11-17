@@ -1,6 +1,7 @@
 import React from 'react';
 
-import SkillBar from './SkillBar';
+import MyJourney from './MyJourney';
+import SkillBar  from './SkillBar';
 
 import './about-me.scss';
 
@@ -27,6 +28,8 @@ const AboutMe = (props) => {
       <div className='title' style={{paddingTop: 50}}>
         {'MY JOURNEY'}
       </div>
+
+      <MyJourney />
 
     </div>
   );
