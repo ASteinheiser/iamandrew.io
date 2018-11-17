@@ -1,0 +1,39 @@
+.skill-bar {
+  position: relative;
+
+  width: 90%;
+  height: 60px;
+  border-radius: 10px;
+
+  margin: 20px 0;
+
+  background: var(--gray);
+
+  .label {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1;
+
+    color: var(--white);
+    text-align: center;
+
+    font-size: 26px;
+    text-align: center;
+
+    padding: 15px 0;
+  }
+
+  .fill-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    background: var(--purple);
+
+    border-radius: 10px;
+  }
+}

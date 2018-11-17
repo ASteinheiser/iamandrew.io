@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { scroller }        from 'react-scroll';
 import VisibilitySensor    from 'react-visibility-sensor';
 
+import AboutMe          from './components/AboutMe';
 import InteractiveStars from './components/InteractiveStars';
 import MyWork           from './components/MyWork';
 import TopBar           from './components/TopBar';
@@ -40,9 +41,7 @@ const App = (props) => {
         </VisibilitySensor>
 
         <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'about')}>
-          <div style={{height: 500}} name={'about'}>
-            {'ABOUT!!!!'}
-          </div>
+          <AboutMe name={'about'} />
         </VisibilitySensor>
 
         <VisibilitySensor onChange={(isVisible) => changeVisible(isVisible, 'contact')}>
