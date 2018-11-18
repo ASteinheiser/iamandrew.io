@@ -1,0 +1,77 @@
+.input-container {
+  position: relative;
+
+  margin-bottom: 45px;
+
+  input {
+    font-size: 18px;
+    color: var(--purple);
+
+    width: 300px;
+    display: block;
+    padding: 10px 10px 10px 5px;
+
+    border: none;
+    border-bottom: 1px solid var(--purple);
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  label {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+
+    font-size: 18px;
+    color: var(--gray);
+    font-weight: normal;
+
+    pointer-events: none;
+
+    transition: 0.2s ease all;
+  }
+
+  /* active state */
+  input:focus ~ label, input:valid ~ label {
+    top: -20px;
+
+    font-size: 14px;
+    color: var(--purple);
+  }
+
+  .color-bar {
+    position: relative;
+
+    display: block;
+    width: 300px;
+  }
+
+  .color-bar:before, .color-bar:after {
+    content:'';
+
+    position: absolute;
+    bottom: 1px;
+
+    height: 2px;
+    width: 0;
+
+    background: var(--purple);
+
+    transition: 0.2s ease all;
+  }
+
+  .color-bar:before {
+    left: 50%;
+  }
+
+  .color-bar:after {
+    right: 50%;
+  }
+
+  /* active state */
+  input:focus ~ .color-bar:before, input:focus ~ .color-bar:after {
+    width: 50%;
+  }
+}
