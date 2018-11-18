@@ -10,7 +10,7 @@ const Contact = (props) => {
     <div name={name} className='contact-container'>
       <div className='paper-container'>
         <div className='title'>
-          {'Contact'}
+          {'CONTACT ME'}
         </div>
       </div>
     </div>

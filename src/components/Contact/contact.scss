@@ -10,6 +10,8 @@
     padding: 25px 50px;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
 
+    margin: 0 10px;
+
     .title {
       font-size: 40px;
       color: var(--purple);
@@ -25,6 +27,9 @@
 @media(max-width: 800px) {
   .contact-container {
     .paper-container {
+
+      padding: 25px;
+
       .title {
         font-size: 36px;
       }

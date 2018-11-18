@@ -1,9 +1,15 @@
 .footer-container {
-  padding: 25px 0;
+  padding: 25px;
 
   text-align: center;
 
   font-size: 24px;
   color: var(--purple);
   font-family: 'Montserrat';
+}
+
+@media(max-width: 800px) {
+  .footer-container {
+    font-size: 20px;
+  }
 }
