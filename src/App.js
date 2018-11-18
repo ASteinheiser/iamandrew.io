@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { scroller }        from 'react-scroll';
-import VisibilitySensor    from 'react-visibility-sensor';
+import React, { useState, useEffect } from 'react';
+import { scroller }                   from 'react-scroll';
+import VisibilitySensor               from 'react-visibility-sensor';
 
 import AboutMe          from './components/AboutMe';
 import InteractiveStars from './components/InteractiveStars';
@@ -27,6 +27,24 @@ const Sensor = (props) => {
 const App = (props) => {
 
   const [active, setActive] = useState('home');
+  const [lastScroll, setLastScroll] = useState(0);
+  const [scrollUp, setScrollUp] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    }
+  });
+
+  function onScroll() {
+    if(lastScroll > window.scrollY) {
+      setScrollUp(true);
+    } else {
+      setScrollUp(false);
+    }
+    setLastScroll(window.scrollY);
+  }
 
   function navigate(section) {
     scroller.scrollTo(section, {
@@ -40,6 +58,24 @@ const App = (props) => {
   function changeVisible(isVisible, section) {
     if(isVisible) {
       setActive(section);
+    } else if(!isVisible && scrollUp) {
+      // handle case for switch sections when scrolling up
+      // because the sensor component either detects elements
+      // completely in view, or based off offset from top of elements.
+      // this handles switching 'active' sections when scrolling up into
+      // sections that stretch past the screen height (specifically on Mobile)
+      switch(section) {
+        case 'work':
+          setActive('home');
+          break;
+        case 'about':
+          setActive('work');
+          break;
+        case 'contact':
+          setActive('about');
+          break;
+        default:
+      }
     }
   }
 
