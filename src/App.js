@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { scroller }        from 'react-scroll';
 
 import AboutMe          from './components/AboutMe';
+import Contact          from './components/Contact';
+import Footer           from './components/Footer';
 import InteractiveStars from './components/InteractiveStars';
 import MyWork           from './components/MyWork';
 import Sensor           from './components/Sensor';
@@ -53,24 +55,29 @@ const App = (props) => {
       <TopBar active={active} navigate={navigate} />
 
       <Sensor onChange={(isVisible) => changeVisible(isVisible, 'home')}>
-        <InteractiveStars name={'home'} />
+        <InteractiveStars name='home' />
       </Sensor>
 
       <div className='max-width'>
+
         <Sensor onChange={(isVisible) => changeVisible(isVisible, 'work')}>
-          <MyWork name={'work'} />
+          <MyWork name='work' />
         </Sensor>
 
         <Sensor onChange={(isVisible) => changeVisible(isVisible, 'about')}>
-          <AboutMe name={'about'} />
+          <AboutMe name='about' />
         </Sensor>
 
         <Sensor onChange={(isVisible) => changeVisible(isVisible, 'contact')}>
-          <div style={{height: 500}} name={'contact'}>
-            {"CONTACT"}
-          </div>
+          <React.Fragment>
+            <Contact name='contact' />
+
+            <Footer />
+          </React.Fragment>
         </Sensor>
+
       </div>
+
     </React.Fragment>
   )
 }
