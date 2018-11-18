@@ -1,50 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { scroller }                   from 'react-scroll';
-import VisibilitySensor               from 'react-visibility-sensor';
+import React, { useState } from 'react';
+import { scroller }        from 'react-scroll';
 
 import AboutMe          from './components/AboutMe';
 import InteractiveStars from './components/InteractiveStars';
 import MyWork           from './components/MyWork';
+import Sensor           from './components/Sensor';
 import TopBar           from './components/TopBar';
-
-const Sensor = (props) => {
-
-  const { children } = props;
-
-  return(
-    <VisibilitySensor
-      minTopValue={300}
-      partialVisible={true}
-      partialVisibility={'top'}
-      {...props}>
-
-      { children }
-
-    </VisibilitySensor>
-  );
-}
+import useScrollUp      from './modules/use-scroll-up.js';
 
 const App = (props) => {
 
   const [active, setActive] = useState('home');
-  const [lastScroll, setLastScroll] = useState(0);
-  const [scrollUp, setScrollUp] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener('scroll', onScroll);
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-    }
-  });
-
-  function onScroll() {
-    if(lastScroll > window.scrollY) {
-      setScrollUp(true);
-    } else {
-      setScrollUp(false);
-    }
-    setLastScroll(window.scrollY);
-  }
+  const scrollUp = useScrollUp();
 
   function navigate(section) {
     scroller.scrollTo(section, {
@@ -58,12 +25,13 @@ const App = (props) => {
   function changeVisible(isVisible, section) {
     if(isVisible) {
       setActive(section);
-    } else if(!isVisible && scrollUp) {
-      // handle case for switch sections when scrolling up
-      // because the sensor component either detects elements
-      // completely in view, or based off offset from top of elements.
-      // this handles switching 'active' sections when scrolling up into
-      // sections that stretch past the screen height (specifically on Mobile)
+    }
+    // handle case for switch sections when scrolling up
+    // because the sensor component either detects elements
+    // completely in view, or based off offset from top of elements.
+    // this handles switching 'active' sections when scrolling up into
+    // sections that stretch past the screen height (specifically on Mobile)
+    else if(!isVisible && scrollUp) {
       switch(section) {
         case 'work':
           setActive('home');
