@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import Input from '../Input';
+import Button from '../Button';
+import Input  from '../Input';
 
 import './contact.scss';
 
@@ -16,6 +17,10 @@ const Contact = (props) => {
     console.log('updateFunc:', updateFunc);
   }
 
+  function onSubmit() {
+    console.log('submitting!!!');
+  }
+
   return(
     <div name={name} className='contact-container'>
       <div className='paper-container'>
@@ -29,6 +34,10 @@ const Contact = (props) => {
           label='email'
           value={email}
           onChange={(e) => handleChange(e, 'email', setEmail)} />
+
+        <Button
+          text='Send Message'
+          onClick={onSubmit} />
 
       </div>
     </div>

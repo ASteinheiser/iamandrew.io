@@ -1,0 +1,29 @@
+.button-container {
+  position: relative;
+  display: inline-block;
+
+  padding: 5px 15px;
+
+  background: transparent;
+
+  border-radius: 5px;
+  border: 2px solid var(--purple);
+  box-shadow: 2px 2px 0 var(--purple);
+
+  font-size: 12px;
+  color: var(--purple);
+  text-decoration: none;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: 'background' .3s ease;
+
+  &:hover {
+    top: 2px;
+    left: 2px;
+
+    box-shadow: 2px 2px 0 transparent;
+  }
+}
