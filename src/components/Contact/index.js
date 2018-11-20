@@ -9,7 +9,9 @@ const Contact = (props) => {
 
   const { name } = props;
 
+  const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
   function handleChange(e, field, updateFunc) {
     console.log('e:', e);
@@ -30,10 +32,22 @@ const Contact = (props) => {
         </div>
 
         <Input
+          label='Name'
+          value={fullName}
+          onChange={(e) => handleChange(e, 'fullName', setFullName)} />
+
+        <Input
           type='email'
-          label='email'
+          label='Email Address'
           value={email}
           onChange={(e) => handleChange(e, 'email', setEmail)} />
+
+        <Input
+          multiline={true}
+          rows={3}
+          label='Message'
+          value={message}
+          onChange={(e) => handleChange(e, 'message', setMessage)} />
 
         <Button
           text='Send Message'
