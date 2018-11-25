@@ -118,6 +118,12 @@
   .timeline {
     padding: 50px 0 0 0;
   }
+  .timeline .event {
+    padding: 15px;
+  }
+  .timeline .event .details {
+    padding: 15px 5px 5px;
+  }
   .timeline .event, .timeline .event:nth-of-type(odd) {
     float: none;
     margin: 15% auto;
@@ -129,6 +135,6 @@
     left: 128px;
   }
   .timeline .event .title-container {
-    margin: 15px 0 0 0;
+    padding: 25px 5px 0;
   }
 }
