@@ -1,0 +1,134 @@
+.timeline {
+  position: relative;
+
+  width: 100%;
+  height: auto;
+
+  .line {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    right: 50%;
+
+    width: 5px;
+    height: 100%;
+    min-height: 250px;
+
+    background: var(--purple);
+    background: linear-gradient(180deg, transparent, var(--purple), var(--purple), transparent);
+  }
+
+  .event {
+    position: relative;
+
+    width: 38%;
+    height: auto;
+
+    text-align: center;
+
+    border-radius: 5px;
+
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+
+    margin: 50px 0 0 5%;
+
+    padding: 25px;
+    background: #fff;
+
+    float: left;
+    box-sizing: border-box;
+
+    .icon {
+      position: absolute;
+      right: -25px;
+      top: -25px;
+
+      height: 50px;
+      width: 50px;
+
+      background: var(--purple);
+      border-radius: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      padding: 0 25px;
+
+      font-size: 22px;
+      color: var(--purple);
+
+      .year {
+        font-size: 20px;
+        color: var(--gray);
+      }
+    }
+
+    .details {
+      font-size: 18px;
+      color: var(--gray);
+
+      padding: 15px 25px 0;
+    }
+
+    &:nth-of-type(odd) {
+      float: right;
+
+      margin: 90px 5% 0 0;
+
+      .icon {
+        left: -25px;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .timeline {
+    .event {
+      float: right;
+
+      width: 60%;
+      min-width: 300px;
+
+      margin: 10% 10% 0 0;
+
+      .icon {
+        left: -25px;
+      }
+
+      &:nth-of-type(odd) {
+        margin: 10% 10% 0 0;
+      }
+    }
+
+    .line {
+      left: 20%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .timeline {
+    padding: 50px 0 0 0;
+  }
+  .timeline .event, .timeline .event:nth-of-type(odd) {
+    float: none;
+    margin: 15% auto;
+  }
+  .timeline .line {
+    left: 50%;
+  }
+  .timeline .event .icon, .timeline .event:nth-of-type(odd) .icon {
+    left: 128px;
+  }
+  .timeline .event .title-container {
+    margin: 15px 0 0 0;
+  }
+}
