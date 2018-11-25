@@ -8,27 +8,30 @@ const Input = (props) => {
 
   return(
     <div className='input-container'>
-
       {
         multiline ?
           <textarea
+            id={label}
             rows={rows || 1}
-            required={true}
             type={type || 'text'}
             value={value}
-            onChange={onChange} />
+            onChange={onChange}
+            placeholder={label}
+            required={true}
+            className='input-field' />
           :
           <input
-            required={true}
+            id={label}
             type={type || 'text'}
             value={value}
-            onChange={onChange} />
+            onChange={onChange}
+            placeholder={label}
+            required={true}
+            className='input-field' />
       }
 
-      <span className='color-bar' />
-
-      <label>
-        {label}
+      <label for={label} className='input-label'>
+        { label }
       </label>
 
     </div>
