@@ -36,13 +36,13 @@ const App = (props) => {
     else if(!isVisible && scrollUp) {
       switch(section) {
         case 'work':
-          setActive('home');
+          if(active === 'work') setActive('home');
           break;
         case 'about':
-          setActive('work');
+          if(active === 'about') setActive('work');
           break;
         case 'contact':
-          setActive('about');
+          if(active === 'contact') setActive('about');
           break;
         default:
       }
