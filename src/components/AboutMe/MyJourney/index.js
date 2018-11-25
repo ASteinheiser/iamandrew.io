@@ -43,6 +43,7 @@ const MyJourney = (props) => {
         Object.keys(journeyData).map(key => {
           return (
             <TimelineItem
+              key={journeyData[key].id}
               title={journeyData[key].title}
               year={journeyData[key].year}
               icon={journeyData[key].icon}

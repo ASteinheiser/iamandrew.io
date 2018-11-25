@@ -30,7 +30,7 @@ const Input = (props) => {
             className='input-field' />
       }
 
-      <label for={label} className='input-label'>
+      <label className='input-label'>
         { label }
       </label>
 

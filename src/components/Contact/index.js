@@ -14,9 +14,15 @@ const Contact = (props) => {
   const [message, setMessage] = useState('');
 
   function handleChange(e, field, updateFunc) {
-    console.log('e:', e);
-    console.log('field:', field);
-    console.log('updateFunc:', updateFunc);
+    const { value } = e.target;
+
+    if(validateField(field, value)) {
+      updateFunc(value);
+    }
+  }
+
+  function validateField(field, value) {
+    return true;
   }
 
   function onSubmit() {
