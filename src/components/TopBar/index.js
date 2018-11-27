@@ -1,7 +1,7 @@
 import React    from 'react';
 import Headroom from 'react-headroom';
 
-import Logo from './logo.png';
+import Logo from './logo.svg';
 
 import './top-bar.scss';
 
