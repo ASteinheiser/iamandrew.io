@@ -14,6 +14,7 @@ const Contact = (props) => {
   const [email, setEmail] = useState({value: '', valid: true});
   const [subject, setSubject] = useState({value: '', valid: true});
   const [message, setMessage] = useState({value: '', valid: true});
+  const [submitted, setSubmitted] = useState(false);
 
   function handleChange(e, field, updateFunc) {
     const { value } = e.target;
@@ -41,7 +42,7 @@ const Contact = (props) => {
 
   function onSubmit() {
     if(validateForm()) {
-      console.log('valid form!!!');
+      setSubmitted(true);
     }
   }
 
@@ -109,6 +110,15 @@ const Contact = (props) => {
         <Button
           text='Send Message'
           onClick={onSubmit} />
+
+        {
+          submitted ?
+            <div className='submit-screen'>
+              Thank you! I will be in contact with you shortly.
+            </div>
+            :
+            null
+        }
 
       </div>
     </div>
