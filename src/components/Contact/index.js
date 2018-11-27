@@ -52,10 +52,10 @@ const Contact = (props) => {
         },
         //make sure to serialize your JSON body
         body: JSON.stringify({
-          name: fullName,
-          email: email,
-          subject: subject,
-          message: message
+          name: fullName.value,
+          email: email.value,
+          subject: subject.value,
+          message: message.value
         })
       };
 
