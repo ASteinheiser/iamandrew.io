@@ -4,7 +4,7 @@ import './input.scss';
 
 const Input = (props) => {
 
-  const { label, type, value, onChange, multiline, rows } = props;
+  const { label, type, value, valid, onChange, multiline, rows } = props;
 
   return(
     <div className='input-container'>
@@ -18,7 +18,7 @@ const Input = (props) => {
             onChange={onChange}
             placeholder={label}
             required={true}
-            className='input-field' />
+            className={'input-field' + (valid ? '' : ' input-field-error')} />
           :
           <input
             id={label}
@@ -27,10 +27,10 @@ const Input = (props) => {
             onChange={onChange}
             placeholder={label}
             required={true}
-            className='input-field' />
+            className={'input-field' + (valid ? '' : ' input-field-error')} />
       }
 
-      <label className='input-label'>
+      <label className={'input-label' + (valid ? '' : ' input-label-error')}>
         { label }
       </label>
 

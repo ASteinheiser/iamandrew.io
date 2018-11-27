@@ -61,3 +61,19 @@ label,
 
   border-bottom: 2px solid var(--purple);
 }
+
+.input-field-error:focus ~ .input-label {
+  color: var(--red);
+}
+
+.input-field-error {
+  border-bottom: 2px solid var(--red);
+}
+
+.input-field-error:focus {
+  border-bottom: 2px solid var(--red);
+}
+
+.input-label-error {
+  color: var(--red);
+}
