@@ -6,6 +6,8 @@ import Input  from '../Input';
 
 import './contact.scss';
 
+const API_URL = 'https://3tqvxy266m.execute-api.us-west-2.amazonaws.com/default/ContactMeEmail';
+
 const Contact = (props) => {
 
   const { name } = props;
@@ -42,7 +44,28 @@ const Contact = (props) => {
 
   function onSubmit() {
     if(validateForm()) {
-      setSubmitted(true);
+      const options = {
+        method: 'post',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        //make sure to serialize your JSON body
+        body: JSON.stringify({
+          name: fullName,
+          email: email,
+          subject: subject,
+          message: message
+        })
+      };
+
+      fetch(API_URL, options)
+        .then(response => {
+          setSubmitted(true);
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 
