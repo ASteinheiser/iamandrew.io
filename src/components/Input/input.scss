@@ -28,6 +28,8 @@
   background: transparent;
 
   transition: border-color 0.2s;
+
+  border-radius: 0; // mobile safari needs this to look "flat"
 }
 
 .input-field::placeholder {
