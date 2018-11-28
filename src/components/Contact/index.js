@@ -17,6 +17,7 @@ const Contact = (props) => {
   const [subject, setSubject] = useState({value: '', valid: true});
   const [message, setMessage] = useState({value: '', valid: true});
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   function handleChange(e, field, updateFunc) {
     const { value } = e.target;
@@ -42,8 +43,13 @@ const Contact = (props) => {
     }
   }
 
-  function onSubmit() {
+  function onSubmit(e) {
+    if(e && typeof e.preventDefault === 'function') e.preventDefault();
+
     if(validateForm()) {
+
+      setLoading(true);
+
       const options = {
         method: 'post',
         headers: {
@@ -62,9 +68,11 @@ const Contact = (props) => {
       fetch(API_URL, options)
         .then(response => {
           setSubmitted(true);
+          setLoading(false);
         })
         .catch(err => {
           console.log(err);
+          setLoading(false);
         });
     }
   }
@@ -97,7 +105,7 @@ const Contact = (props) => {
 
   return(
     <div name={name} className='contact-container'>
-      <div className='paper-container'>
+      <form className='paper-container' onSubmit={onSubmit}>
 
         <div className='title'>
           {'CONTACT ME'}
@@ -131,8 +139,11 @@ const Contact = (props) => {
           onChange={(e) => handleChange(e, 'message', setMessage)} />
 
         <Button
+          loading={loading}
           text='Send Message'
           onClick={onSubmit} />
+
+       <input type='submit' style={{ display: 'none' }} />
 
         {
           submitted ?
@@ -143,7 +154,7 @@ const Contact = (props) => {
             null
         }
 
-      </div>
+      </form>
     </div>
   );
 }

@@ -1,18 +1,35 @@
-import React from 'react';
+import React        from 'react';
+import ReactLoading from 'react-loading';
 
 import './button.scss';
 
 const Button = (props) => {
 
-  const { onClick, text } = props;
+  const { onClick, text, loading } = props;
+
+  function handleClick() {
+    if(!loading) {
+      onClick();
+    }
+  }
 
   return(
-    <div className='button-container'
-      onClick={onClick}>
+    <button
+      className='button-container'
+      onClick={handleClick}>
 
-      { text }
+      {
+        loading ?
+          <ReactLoading
+            color={'var(--purple)'}
+            type={'spin'}
+            height={25}
+            width={25} />
+          :
+          text
+      }
 
-    </div>
+    </button>
   );
 }
 
