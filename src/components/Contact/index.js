@@ -143,8 +143,6 @@ const Contact = (props) => {
           text='Send Message'
           onClick={onSubmit} />
 
-       <input type='submit' style={{ display: 'none' }} />
-
         {
           submitted ?
             <div className='submit-screen'>
