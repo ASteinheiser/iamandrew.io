@@ -46,7 +46,7 @@ const Contact = (props) => {
   function onSubmit(e) {
     if(e && typeof e.preventDefault === 'function') e.preventDefault();
 
-    if(validateForm()) {
+    if(validateForm() && !submitted) {
 
       setLoading(true);
 
