@@ -46,7 +46,7 @@ const Contact = (props) => {
   function onSubmit(e) {
     if(e && typeof e.preventDefault === 'function') e.preventDefault();
 
-    if(validateForm() && !submitted) {
+    if(validateForm() && !submitted && !loading) {
 
       setLoading(true);
 
@@ -105,7 +105,7 @@ const Contact = (props) => {
 
   return(
     <div name={name} className='contact-container'>
-      <form className='paper-container' onSubmit={onSubmit}>
+      <div className='paper-container'>
 
         <div className='title'>
           {'CONTACT ME'}
@@ -152,7 +152,7 @@ const Contact = (props) => {
             null
         }
 
-      </form>
+      </div>
     </div>
   );
 }
