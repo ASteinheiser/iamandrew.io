@@ -21,11 +21,8 @@ const Contact = (props) => {
 
   function handleChange(e, field, updateFunc) {
     const { value } = e.target;
-    let valid = false;
-
-    if(validateField(field, value)) {
-      valid = true;
-    }
+    
+    let valid = validateField(field, value);
 
     updateFunc({ value, valid });
   }
