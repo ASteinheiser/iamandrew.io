@@ -1,38 +1,32 @@
 {
   "5": {
-    "id": 5,
     "title": "#SmartBlondes Website Redesign",
     "image": "https://i.imgur.com/S7yTLD8.jpg",
     "link": "https://smart-blondes.com/"
   },
   "4": {
-    "id": 4,
     "title": "RPG made completely with React and Redux!",
     "image": "https://i.imgur.com/E6RzHSW.png",
     "link": "http://react-rpg.com"
   },
   "3": {
-    "id": 3,
     "title": "Main Contributer on Zinkn Web-App and Backend",
     "image": "https://is2-ssl.mzstatic.com/image/thumb/Purple128/v4/b6/d3/01/b6d301de-6e7e-c014-5862-4c4623d70f39/source/512x512bb.jpg",
     "link": "https://app.zinkn.com"
   },
   "2": {
-    "id": 2,
+    "title": "generator-oxy-gen - A tool for creating desktop apps with React and Rust (via Web Assembly)",
+    "image": "https://raw.githubusercontent.com/ASteinheiser/generator-oxy-gen/master/OXY-GEN%20Demo%20Screenshot.png",
+    "link": "https://github.com/ASteinheiser/generator-oxy-gen"
+  },
+  "1": {
     "title": "Sip Detecting Koozie - Combining ML and IoT",
     "image": "https://cdn-images-1.medium.com/max/800/1*2wmdbFdEuUi2kUpWk77nxg.jpeg",
     "link": "https://medium.com/octoblu-engineering/building-a-sip-detector-combining-machine-learning-and-iot-723dfd1719b6"
   },
-  "1": {
-    "id": 1,
+  "0": {
     "title": "Controlling a Drone Swarm with Hand Gestures",
     "image": "https://hackster.imgix.net/uploads/cover_image/file/109355/drones!.jpg?auto=compress%2Cformat&w=900&h=675&fit=min",
     "link": "https://www.hackster.io/andrewstein/control-your-drone-swarm-with-hand-gestures-2fd3cd"
-  },
-  "0": {
-    "id": 0,
-    "title": "Photon Baby Monitor - HackAz 2016",
-    "image": "https://hackster.imgix.net/uploads/cover_image/file/114654/IMG_20160123_164142.jpg?auto=compress%2Cformat&w=900&h=675&fit=min",
-    "link": "https://www.hackster.io/andrewstein/wifi-baby-monitor-with-nodejs-ios-photon-and-parse-190ddb"
   }
 }
