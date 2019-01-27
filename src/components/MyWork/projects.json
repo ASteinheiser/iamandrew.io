@@ -17,7 +17,7 @@
   "2": {
     "title": "generator-oxy-gen - A tool for creating desktop apps with React and Rust (via Web Assembly)",
     "image": "https://raw.githubusercontent.com/ASteinheiser/generator-oxy-gen/master/OXY-GEN%20Demo%20Screenshot.png",
-    "link": "https://github.com/ASteinheiser/generator-oxy-gen"
+    "link": "https://www.npmjs.com/package/generator-oxy-gen"
   },
   "1": {
     "title": "Sip Detecting Koozie - Combining ML and IoT",
