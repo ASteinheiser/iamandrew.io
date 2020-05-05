@@ -1,32 +1,31 @@
-{
-  "5": {
-    "title": "#SmartBlondes Website Redesign",
-    "image": "https://i.imgur.com/S7yTLD8.jpg",
-    "link": "https://smart-blondes.com/"
+[{
+    "title": "Amoeba - Programming language written from scratch in Golang with no dependencies!",
+    "image": "https://instagram.fphx1-2.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/94934051_121828289498712_5369307077713748289_n.jpg?_nc_ht=instagram.fphx1-2.fna.fbcdn.net&_nc_cat=100&_nc_ohc=IqItWYs3QDcAX-fyexm&oh=36f9a187fb87a584c9976f28e1a5cc54&oe=5EDA71A3",
+    "link": "https://github.com/ASteinheiser/amoeba-interpreter"
   },
-  "4": {
+  {
     "title": "React RPG - Game made with React.js. Available on the Web and in the App Stores!",
     "image": "https://i.imgur.com/E6RzHSW.png",
     "link": "http://react-rpg.com"
   },
-  "3": {
-    "title": "Main Contributer on Zinkn Web-App and Backend",
-    "image": "https://is2-ssl.mzstatic.com/image/thumb/Purple128/v4/b6/d3/01/b6d301de-6e7e-c014-5862-4c4623d70f39/source/512x512bb.jpg",
-    "link": "https://app.zinkn.com"
+  {
+    "title": "SAVG Thread - Streetwear clothing brand, handmade locally in Tempe!",
+    "image": "https://instagram.fphx1-2.fna.fbcdn.net/v/t51.2885-15/e35/27580040_415375368914753_6887476888067899392_n.jpg?_nc_ht=instagram.fphx1-2.fna.fbcdn.net&_nc_cat=105&_nc_ohc=-IIeZYK5IjwAX8ipvIR&oh=27f2f6a676b85a3892d99a13a1e93690&oe=5EDBF7D4",
+    "link": "https://www.instagram.com/savgthread/"
   },
-  "2": {
+  {
     "title": "generator-oxy-gen - A tool for creating desktop apps with React and Rust (via Web Assembly)",
     "image": "https://raw.githubusercontent.com/ASteinheiser/generator-oxy-gen/master/OXY-GEN%20Demo%20Screenshot.png",
     "link": "https://www.npmjs.com/package/generator-oxy-gen"
   },
-  "1": {
+  {
     "title": "Sip Detecting Koozie - Combining ML and IoT",
     "image": "https://cdn-images-1.medium.com/max/800/1*2wmdbFdEuUi2kUpWk77nxg.jpeg",
     "link": "https://medium.com/octoblu-engineering/building-a-sip-detector-combining-machine-learning-and-iot-723dfd1719b6"
   },
-  "0": {
+  {
     "title": "Controlling a Drone Swarm with Hand Gestures",
     "image": "https://hackster.imgix.net/uploads/cover_image/file/109355/drones!.jpg?auto=compress%2Cformat&w=900&h=675&fit=min",
     "link": "https://www.hackster.io/andrewstein/control-your-drone-swarm-with-hand-gestures-2fd3cd"
   }
-}
+]

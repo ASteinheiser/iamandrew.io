@@ -18,11 +18,11 @@ const MyWork = (props) => {
 
       <div className='bubble-container'>
         {
-          Object.keys(Projects).reverse().map(key => {
+          Projects.map((item, index) => {
             return (
               <WorkBubble
-                key={key}
-                data={Projects[key]} />
+                key={index}
+                data={item} />
             );
           })
         }
