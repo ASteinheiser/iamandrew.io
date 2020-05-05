@@ -33,24 +33,30 @@ const TimelineItem = (props) => {
   );
 }
 
-const MyJourney = (props) => {
+const MyJourney = ({ name }) => {
   return(
-    <div className='timeline'>
+    <div name={name} className='journey-container'>
+      <div className='title'>
+        {'MY JOURNEY'}
+      </div>
 
-      <div className='line' />
+      <div className='timeline'>
 
-      {
-        Object.keys(journeyData).map(key => {
-          return (
-            <TimelineItem
-              key={journeyData[key].id}
-              title={journeyData[key].title}
-              year={journeyData[key].year}
-              icon={journeyData[key].icon}
-              description={journeyData[key].description} />
-            );
-          })
-      }
+        <div className='line' />
+
+        {
+          journeyData.map((item, index) => {
+            return (
+              <TimelineItem
+                key={index}
+                title={item.title}
+                year={item.year}
+                icon={item.icon}
+                description={item.description} />
+              );
+            })
+        }
+      </div>
     </div>
   );
 }

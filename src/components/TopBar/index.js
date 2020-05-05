@@ -22,9 +22,9 @@ const TopBar = (props) => {
               {'WORK_'}
             </div>
 
-            <div className={'top-bar-item' + (props.active === 'about' ? ' active' : '')}
-              onClick={() => props.navigate('about')}>
-              {'ABOUT_'}
+            <div className={'top-bar-item' + (props.active === 'journey' ? ' active' : '')}
+              onClick={() => props.navigate('journey')}>
+              {'JOURNEY_'}
             </div>
 
             <div className={'top-bar-item' + (props.active === 'contact' ? ' active' : '')}

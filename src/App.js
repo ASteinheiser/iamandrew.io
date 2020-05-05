@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { scroller }        from 'react-scroll';
 
-import AboutMe          from './components/AboutMe';
+import Journey          from './components/Journey';
 import Contact          from './components/Contact';
 import Footer           from './components/Footer';
 import InteractiveStars from './components/InteractiveStars';
@@ -10,7 +10,7 @@ import Sensor           from './components/Sensor';
 import TopBar           from './components/TopBar';
 import useScrollUp      from './modules/use-scroll-up.js';
 
-const App = (props) => {
+const App = () => {
 
   const [active, setActive] = useState('home');
   const scrollUp = useScrollUp();
@@ -38,11 +38,11 @@ const App = (props) => {
         case 'work':
           if(active === 'work') setActive('home');
           break;
-        case 'about':
-          if(active === 'about') setActive('work');
+        case 'journey':
+          if(active === 'journey') setActive('work');
           break;
         case 'contact':
-          if(active === 'contact') setActive('about');
+          if(active === 'contact') setActive('journey');
           break;
         default:
       }
@@ -64,8 +64,8 @@ const App = (props) => {
           <MyWork name='work' />
         </Sensor>
 
-        <Sensor onChange={(isVisible) => changeVisible(isVisible, 'about')}>
-          <AboutMe name='about' />
+        <Sensor onChange={(isVisible) => changeVisible(isVisible, 'journey')}>
+          <Journey name='journey' />
         </Sensor>
 
         <Sensor onChange={(isVisible) => changeVisible(isVisible, 'contact')}>

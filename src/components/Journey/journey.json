@@ -1,44 +1,37 @@
-{
-  "0": {
-    "id": 0,
+[{
     "icon": "code",
     "title": "SIBI",
     "year": "2019 - Today",
-    "description": "Software Developer working mostly with React Native."
+    "description": "Software Developer working mostly on mobile applications using React Native."
   },
-  "1": {
-    "id": 1,
+  {
     "icon": "insert_emoticon",
     "title": "Freelancer",
     "year": "2018 - 19",
     "description": "Consulting various clients using tools from Shopify to React & Node.js."
   },
-  "2": {
-    "id": 2,
+  {
     "icon": "laptop_mac",
     "title": "Fyresite",
     "year": "2017 - 19",
     "description": "Follow projects through from the client’s idea to final product release."
   },
-  "3": {
-    "id": 3,
+  {
     "icon": "color_lens",
     "title": "SAVG Thread",
     "year": "2017 - 18",
     "description": "Designed kimonos and t-shirts that got showcased in multiple fashion shows."
   },
-  "4": {
-    "id": 4,
+  {
     "icon": "school",
     "title": "Arizona State",
     "year": "2014 - 17",
     "description": "Graduated ASU with a B.S. in Computer Science."
   },
-  "5": {
-    "id": 5,
+  {
     "icon": "build",
     "title": "Octoblu",
     "year": "2014 - 17",
     "description": "Learned JavaScript by creating microservices, IoT automations, and robots."
   }
-}
+]
