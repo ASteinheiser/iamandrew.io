@@ -5,7 +5,7 @@ import Journey          from './components/Journey';
 import Contact          from './components/Contact';
 import Footer           from './components/Footer';
 import InteractiveStars from './components/InteractiveStars';
-import MyWork           from './components/MyWork';
+import Work             from './components/Work';
 import Sensor           from './components/Sensor';
 import TopBar           from './components/TopBar';
 import useScrollUp      from './modules/use-scroll-up.js';
@@ -61,7 +61,7 @@ const App = () => {
       <div className='max-width'>
 
         <Sensor onChange={(isVisible) => changeVisible(isVisible, 'work')}>
-          <MyWork name='work' />
+          <Work name='work' />
         </Sensor>
 
         <Sensor onChange={(isVisible) => changeVisible(isVisible, 'journey')}>
