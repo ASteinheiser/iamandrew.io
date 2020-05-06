@@ -4,8 +4,8 @@
 
   text-decoration: none;
 
-  width: 30%;
-  height: 200px;
+  width: 45%;
+  height: 300px;
 
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 
@@ -23,6 +23,8 @@
     transform: scale(1.1);
 
     .hover-title {
+      opacity: 1;
+
       position: absolute;
       top: 0;
       bottom: 0;
@@ -43,20 +45,19 @@
   }
 
   .hover-title {
+    opacity: 0;
+
     font-size: 20px;
     color: transparent;
 
     padding: 25px;
+
+    transition: ease-in-out 0.5s ease-out;
+    transition-property: opacity;
   }
 }
 
-@media(max-width: 1000px) {
-  .work-bubble-container {
-    width: 45%;
-  }
-}
-
-@media(max-width: 600px) {
+@media(max-width: 780px) {
   .work-bubble-container {
     width: 88%;
   }
