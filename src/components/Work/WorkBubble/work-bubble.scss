@@ -31,35 +31,39 @@
       right: 0;
       left: 0;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      text-align: center;
-
       color: var(--white);
       background: rgba(0, 0, 0, 0.75);
 
       border-radius: 5px;
+
+      .tags-container {
+        opacity: 1;
+      }
     }
   }
 
   .hover-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 
     opacity: 0;
 
     font-size: 20px;
+    text-align: center;
     color: transparent;
 
     padding: 25px;
 
     transition: ease-in-out 0.5s ease-out;
     transition-property: opacity;
-  }
 
-  .tags-container {
-    padding-top: 16px;
+    .tags-container {
+      opacity: 0;
+
+      padding-top: 24px;
+    }
   }
 }
 
