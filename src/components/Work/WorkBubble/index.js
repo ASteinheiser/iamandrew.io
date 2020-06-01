@@ -9,8 +9,10 @@ const WorkBubble = ({ data, active }) => {
 
   const { image, link, title, tags } = data;
 
+  const shouldAnimate = isMobile && active;
+
   const style = { backgroundImage: `url(${image})` };
-  if (isMobile && active) {
+  if (shouldAnimate) {
     style.transform = 'scale(1.1)';
   }
 
@@ -24,10 +26,16 @@ const WorkBubble = ({ data, active }) => {
         ${!isMobile ? 'work-bubble-container--desktop' : ''}
       `}>
 
-      <div className='hover-title'>
-        { title }
+      <div
+        style={shouldAnimate ? { opacity: 1 } : {}}
+        className={`
+          hover-title
+          ${shouldAnimate ? 'hover-title--mobile__active' : ''}
+        `}
+      >
+        <div>{ title }</div>
 
-        <div className='tags-container'>
+        <div className='tags-container' style={shouldAnimate ? { opacity: 1 } : {}}>
           {tags.map(tag => <SkillBadge key={tag} title={tag} />)}
         </div>
       </div>

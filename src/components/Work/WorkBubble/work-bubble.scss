@@ -1,3 +1,16 @@
+.hover-title--mobile__active {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  color: var(--white) !important;
+  background: rgba(0, 0, 0, 0.75);
+
+  border-radius: 5px;
+}
+
 .work-bubble-container {
 
   position: relative;

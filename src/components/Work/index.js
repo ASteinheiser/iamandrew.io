@@ -23,13 +23,16 @@ const MyWork = ({ name }) => {
             const { title } = item;
 
             return (
-              <Sensor key={index} onChange={(isVisible) => {
-                if (isVisible) {
-                  setActivePost(title);
-                } else if (!isVisible && activePost === title) {
-                  setActivePost(null);
-                }
-              }}>
+              <Sensor
+                key={index}
+                minTopValue={400}
+                onChange={(isVisible) => {
+                  if (isVisible) {
+                    setActivePost(title);
+                  } else if (!isVisible && activePost === title) {
+                    setActivePost(null);
+                  }
+                }}>
                 <WorkBubble data={item} active={activePost === title} />
               </Sensor>
             );
