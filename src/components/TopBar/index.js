@@ -1,5 +1,6 @@
 import React    from 'react';
 import Headroom from 'react-headroom';
+import { isMobile } from 'react-device-detect';
 
 import Logo from './logo.svg';
 
@@ -9,7 +10,7 @@ const TopBar = (props) => {
 
   return(
     <Headroom>
-      <div className='top-bar-container'>
+      <div className={`top-bar-container ${!isMobile ? 'top-bar-container--desktop' : ''}`}>
         <div className='max-width spacing'>
           <img className='top-bar-logo'
             src={Logo} alt='logo'
