@@ -6,6 +6,14 @@ import GoImg from './badges/golang.png';
 import ReactImg from './badges/react.png';
 import ReactNativeImg from './badges/react-native.png';
 import ControllerImg from './badges/game-controller.png';
+import BusinessImg from './badges/business.png';
+import LightroomImg from './badges/lightroom.png';
+import PhotoshopImg from './badges/photoshop.png';
+import ElectronImg from './badges/electron.png';
+import RustImg from './badges/rust.png';
+import MachineLearningImg from './badges/machine-learning.png';
+import IoTImg from './badges/iot.png';
+import BlogImg from './badges/blog.png';
 
 const SkillBadge = ({ title }) => {
 
@@ -20,21 +28,21 @@ const SkillBadge = ({ title }) => {
       case 'React Native':
         return ReactNativeImg;
       case 'Business Development':
-        return null;
+        return BusinessImg;
       case 'Lightroom':
-        return null;
+        return LightroomImg;
       case 'Photoshop':
-        return null;
+        return PhotoshopImg;
       case 'Electron':
-        return null;
+        return ElectronImg;
       case 'Rust':
-        return null;
+        return RustImg;
       case 'Machine Learning':
-        return null;
+        return MachineLearningImg;
       case 'Internet of Things':
-        return null;
+        return IoTImg;
       case 'Blog Post':
-        return null;
+        return BlogImg;
       default:
         return null;
     }
