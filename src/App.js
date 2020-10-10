@@ -8,7 +8,7 @@ import InteractiveStars from './components/InteractiveStars';
 import Work             from './components/Work';
 import Sensor           from './components/Sensor';
 import TopBar           from './components/TopBar';
-import useScrollUp      from './modules/use-scroll-up.js';
+import useScrollUp      from './hooks/use-scroll-up.js';
 
 const App = () => {
 
