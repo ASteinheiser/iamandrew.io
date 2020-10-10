@@ -1,20 +1,26 @@
 [{
-    "icon": "code",
+    "icon": "cloud_queue",
+    "title": "Magic Leap",
+    "year": "2020 - Today",
+    "description": "Engineering the clouds for the Magicverse."
+  },
+  {
+    "icon": "phone_iphone",
     "title": "SIBI",
-    "year": "2019 - Today",
-    "description": "Software Developer working mostly on mobile applications using React Native."
+    "year": "2019 - 2020",
+    "description": "Developed mobile apps to connect real estate funds direct to manufacturers."
   },
   {
     "icon": "insert_emoticon",
     "title": "Freelancer",
     "year": "2018 - 19",
-    "description": "Consulting various clients using tools from Shopify to React & Node.js."
+    "description": "Consulted various clients using tools from Shopify to React & Node.js."
   },
   {
-    "icon": "laptop_mac",
+    "icon": "code",
     "title": "Fyresite",
     "year": "2017 - 19",
-    "description": "Follow projects through from the client’s idea to final product release."
+    "description": "Followed projects through from the client’s idea to final product release."
   },
   {
     "icon": "color_lens",
