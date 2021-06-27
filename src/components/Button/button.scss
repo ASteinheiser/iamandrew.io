@@ -1,32 +1,19 @@
 .button-container {
-  position: relative;
-  display: inline-block;
-
-  padding: 10px 20px;
-
-  margin-top: 50px;
-
-  background: transparent;
-
-  border-radius: 5px;
-  border: 2px solid var(--purple);
-  box-shadow: 2px 2px 0 var(--purple);
-
+  font-family: 'Roboto';
+  color: #fff;
   font-size: 18px;
-  color: var(--purple);
-  text-decoration: none;
-  text-transform: uppercase;
 
   cursor: pointer;
-  user-select: none;
-  outline: none;
+  transition: 0.15s all ease-in-out;
+  text-decoration: none;
 
-  transition: 'background' .3s ease;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 30px;
+  margin-top: 50px;
 
-  &:hover {
-    top: 2px;
-    left: 2px;
-
-    box-shadow: 2px 2px 0 transparent;
-  }
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--light-purple)), to(var(--purple)));
+  background-image: -webkit-linear-gradient(top, var(--light-purple), var(--purple));
+  background-image: -o-linear-gradient(top, var(--light-purple), var(--purple));
+  background-image: linear-gradient(to bottom, var(--light-purple), var(--purple));
 }
