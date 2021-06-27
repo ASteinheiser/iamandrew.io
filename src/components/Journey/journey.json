@@ -1,13 +1,19 @@
 [{
+    "icon": "devices",
+    "title": "SIBI",
+    "year": "2021 - Today",
+    "description": "Senior engineer focusing on creating solutions for our real estate clients."
+  },
+  {
     "icon": "cloud_queue",
     "title": "Magic Leap",
-    "year": "2020 - Today",
-    "description": "Engineering the clouds for the Magicverse."
+    "year": "2020 - 21",
+    "description": "Engineered the clouds for the Magicverse. Created APIs for enterprise AR."
   },
   {
     "icon": "phone_iphone",
     "title": "SIBI",
-    "year": "2019 - 2020",
+    "year": "2019 - 20",
     "description": "Developed mobile apps to connect real estate funds direct to manufacturers."
   },
   {
