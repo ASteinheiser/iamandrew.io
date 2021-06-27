@@ -50,8 +50,7 @@ const App = () => {
   }
 
   return(
-    <React.Fragment>
-
+    <>
       <TopBar active={active} navigate={navigate} />
 
       <Sensor onChange={(isVisible) => changeVisible(isVisible, 'home')}>
@@ -59,7 +58,6 @@ const App = () => {
       </Sensor>
 
       <div className='max-width'>
-
         <Sensor onChange={(isVisible) => changeVisible(isVisible, 'work')}>
           <Work name='work' />
         </Sensor>
@@ -69,16 +67,13 @@ const App = () => {
         </Sensor>
 
         <Sensor onChange={(isVisible) => changeVisible(isVisible, 'contact')}>
-          <React.Fragment>
+          <>
             <Contact name='contact' />
-
             <Footer />
-          </React.Fragment>
+          </>
         </Sensor>
-
       </div>
-
-    </React.Fragment>
+    </>
   )
 }
 
