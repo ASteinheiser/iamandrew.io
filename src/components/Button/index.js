@@ -21,7 +21,7 @@ const Button = (props) => {
       {
         loading ?
           <ReactLoading
-            color={'var(--purple)'}
+            color={'var(--white)'}
             type={'spin'}
             height={25}
             width={25} />
