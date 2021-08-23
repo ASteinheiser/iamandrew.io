@@ -14,6 +14,7 @@ import RustImg from './badges/rust.png';
 import MachineLearningImg from './badges/machine-learning.png';
 import IoTImg from './badges/iot.png';
 import BlogImg from './badges/blog.png';
+import LongboardImg from './badges/longboard.png';
 
 const SkillBadge = ({ title }) => {
 
@@ -43,6 +44,8 @@ const SkillBadge = ({ title }) => {
         return IoTImg;
       case 'Blog Post':
         return BlogImg;
+      case 'Longboard':
+        return LongboardImg;
       default:
         return null;
     }

@@ -7,8 +7,8 @@ import './typing-text.scss';
 const TYPING_TEXT = [
   'ANDREW',
   'A FULLSTACK DEV',
+  'A SKATER',
   'A CREATOR',
-  'A DESIGNER',
 ];
 
 const TypingText = (props) => {

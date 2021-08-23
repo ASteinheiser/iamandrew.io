@@ -1,4 +1,17 @@
-[{
+[
+  {
+    "title": "Amp Skate - Longboarding app that helps riders learn new tricks and amp up the community!",
+    "tags": ["React", "Longboard", "Business Development"],
+    "image": "https://s3.us-west-2.amazonaws.com/images.iamandrew.io/amp-skate.png",
+    "link": "https://www.ampskate.com/"
+  },
+  {
+    "title": "Follow my longboard freestyle journey! @skateheiser",
+    "tags": ["Longboard"],
+    "image": "https://s3.us-west-2.amazonaws.com/images.iamandrew.io/styled-andrew-cropped.png",
+    "link": "https://www.instagram.com/skateheiser/"
+  },
+  {
     "title": "Amoeba - Programming language written from scratch in Golang with no dependencies!",
     "tags": ["Golang"],
     "image": "https://s3-us-west-2.amazonaws.com/images.iamandrew.io/amoeba.jpg",
