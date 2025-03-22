@@ -5,15 +5,15 @@ import './button.scss';
 interface ButtonProps {
   text: string;
   loading: boolean;
-  onClick: () => void;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button = (props: ButtonProps) => {
   const { onClick, text, loading } = props;
 
-  function handleClick() {
+  function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
     if (!loading) {
-      onClick();
+      onClick(e);
     }
   }
 
