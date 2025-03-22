@@ -1,0 +1,88 @@
+.hover-title--mobile__active {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  color: var(--white) !important;
+  background: rgba(0, 0, 0, 0.75);
+
+  border-radius: 12px;
+}
+
+.work-bubble-container {
+
+  position: relative;
+
+  text-decoration: none;
+
+  width: 45%;
+  height: 300px;
+
+  border-radius: 12px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.25);
+
+  margin: 10px 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: all 0.5s ease-out;
+
+  .hover-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    opacity: 0;
+
+    font-size: 20px;
+    text-align: center;
+    color: transparent;
+
+    padding: 25px;
+
+    transition: ease-in-out 0.5s ease-out;
+    transition-property: opacity;
+
+    .tags-container {
+      opacity: 0;
+
+      padding-top: 24px;
+    }
+  }
+}
+
+.work-bubble-container--desktop {
+  &:hover {
+    transform: scale(1.1);
+
+    .hover-title {
+      opacity: 1;
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+
+      color: var(--white);
+      background: rgba(0, 0, 0, 0.75);
+
+      border-radius: 12px;
+
+      .tags-container {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media(max-width: 780px) {
+  .work-bubble-container {
+    width: 88%;
+  }
+}

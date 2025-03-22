@@ -1,0 +1,77 @@
+[
+  {
+    "title": "Amp Skate - Longboarding app that helps riders learn new tricks and amp up the community!",
+    "tags": [
+      "React",
+      "Longboard",
+      "Business Development"
+    ],
+    "image": "https://s3.us-west-2.amazonaws.com/images.iamandrew.io/amp-skate.png",
+    "link": "https://www.ampskate.com/"
+  },
+  {
+    "title": "Follow my longboard freestyle journey! @skateheiser",
+    "tags": [
+      "Longboard"
+    ],
+    "image": "https://s3.us-west-2.amazonaws.com/images.iamandrew.io/styled-andrew-cropped.png",
+    "link": "https://www.instagram.com/skateheiser/"
+  },
+  {
+    "title": "Amoeba - Programming language written from scratch in Golang with no dependencies!",
+    "tags": [
+      "Golang"
+    ],
+    "image": "https://s3.us-west-2.amazonaws.com/images.iamandrew.io/amoeba-splash.png",
+    "link": "https://github.com/ASteinheiser/amoeba-interpreter"
+  },
+  {
+    "title": "React RPG - Game made with React.js. Available on the Web and in the App Stores!",
+    "tags": [
+      "Game Development",
+      "React",
+      "React Native"
+    ],
+    "image": "https://s3.us-west-2.amazonaws.com/images.iamandrew.io/react-rpg.png",
+    "link": "http://react-rpg.com"
+  },
+  {
+    "title": "SAVG Thread - Streetwear clothing brand, handmade locally in Tempe!",
+    "tags": [
+      "Business Development",
+      "Lightroom",
+      "Photoshop"
+    ],
+    "image": "https://s3.us-west-2.amazonaws.com/images.iamandrew.io/savg-thread.jpeg",
+    "link": "https://www.instagram.com/savgthread/"
+  },
+  {
+    "title": "generator-oxy-gen - A tool for creating desktop apps with React and Rust (via Web Assembly)",
+    "tags": [
+      "Electron",
+      "React",
+      "Rust"
+    ],
+    "image": "https://s3.us-west-2.amazonaws.com/images.iamandrew.io/oxy-gen-demo.png",
+    "link": "https://www.npmjs.com/package/generator-oxy-gen"
+  },
+  {
+    "title": "Sip Detecting Koozie - Combining ML and IoT",
+    "tags": [
+      "Internet of Things",
+      "Machine Learning",
+      "Blog Post"
+    ],
+    "image": "https://s3.us-west-2.amazonaws.com/images.iamandrew.io/sip-detecting-koozie.jpeg",
+    "link": "https://medium.com/octoblu-engineering/building-a-sip-detector-combining-machine-learning-and-iot-723dfd1719b6"
+  },
+  {
+    "title": "Controlling a Drone Swarm with Hand Gestures",
+    "tags": [
+      "Internet of Things",
+      "Blog Post"
+    ],
+    "image": "https://s3.us-west-2.amazonaws.com/images.iamandrew.io/drone-swarm.jpeg",
+    "link": "https://www.hackster.io/andrewstein/control-your-drone-swarm-with-hand-gestures-2fd3cd"
+  }
+]
