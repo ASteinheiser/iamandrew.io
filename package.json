@@ -13,7 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@material-ui/icons": "^4.11.3",
+    "@mui/icons-material": "^6.4.8",
     "react": "^19.0.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^19.0.0",
@@ -30,8 +30,6 @@
     "@types/react-dom": "^19.0.4",
     "@types/react-headroom": "^3.2.3",
     "@types/react-scroll": "^1.8.10",
-    "@types/react-visibility-sensor": "^5.1.0",
-    "@types/sass": "^1.45.0",
     "@types/validator": "^13.12.2",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.21.0",
