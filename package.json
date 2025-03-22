@@ -2,7 +2,7 @@
   "name": "iamandrew.io",
   "private": true,
   "version": "1.0.0",
-  "homepage": "https://asteinheiser.github.io/iamandrew.io",
+  "homepage": "https://iamandrew.io",
   "type": "module",
   "scripts": {
     "predeploy": "pnpm run build",
