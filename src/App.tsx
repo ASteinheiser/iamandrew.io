@@ -10,7 +10,7 @@ import Work from './components/Work';
 import TopBar from './components/TopBar';
 import useScrollUp from './hooks/use-scroll-up.js';
 
-const App = () => {
+export const App = () => {
   const [active, setActive] = useState('home');
   const scrollUp = useScrollUp();
 
@@ -75,5 +75,3 @@ const App = () => {
     </>
   );
 };
-
-export default App;

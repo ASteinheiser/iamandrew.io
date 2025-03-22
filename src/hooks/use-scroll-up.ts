@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 
-const useScrollUp = () => {
+export const useScrollUp = () => {
   const [_, setLastScroll] = useState(0);
   const [isScrollUp, setIsScrollUp] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      setLastScroll((currentScroll) => {
-        if (currentScroll > window.scrollY) {
+      setLastScroll((lastScroll) => {
+        if (lastScroll > window.scrollY) {
           setIsScrollUp(true);
         } else {
           setIsScrollUp(false);
@@ -24,5 +24,3 @@ const useScrollUp = () => {
 
   return { isScrollUp };
 };
-
-export default useScrollUp;
