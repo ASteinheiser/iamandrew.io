@@ -8,11 +8,11 @@ import Footer from './components/Footer';
 import InteractiveStars from './components/InteractiveStars';
 import Work from './components/Work';
 import TopBar from './components/TopBar';
-import useScrollUp from './hooks/use-scroll-up.js';
+import { useScrollUp } from './hooks/use-scroll-up.js';
 
 export const App = () => {
   const [active, setActive] = useState('home');
-  const scrollUp = useScrollUp();
+  const { isScrollUp } = useScrollUp();
 
   const navigate = (section: string) => {
     scroller.scrollTo(section, {
@@ -32,7 +32,7 @@ export const App = () => {
     // completely in view, or based off offset from top of elements.
     // this handles switching 'active' sections when scrolling up into
     // sections that stretch past the screen height (especially on Mobile)
-    else if (!isVisible && scrollUp) {
+    else if (!isVisible && isScrollUp) {
       switch (section) {
         case 'work':
           if (active === 'work') setActive('home');
