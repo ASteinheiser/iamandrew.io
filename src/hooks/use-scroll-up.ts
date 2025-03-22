@@ -8,11 +8,11 @@ const useScrollUp = () => {
     window.addEventListener('scroll', onScroll);
     return () => {
       window.removeEventListener('scroll', onScroll);
-    }
+    };
   });
 
   function onScroll() {
-    if(lastScroll > window.scrollY) {
+    if (lastScroll > window.scrollY) {
       setScrollUp(true);
     } else {
       setScrollUp(false);
@@ -21,6 +21,6 @@ const useScrollUp = () => {
   }
 
   return scrollUp;
-}
+};
 
 export default useScrollUp;
