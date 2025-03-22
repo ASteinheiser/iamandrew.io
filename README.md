@@ -1,54 +1,33 @@
-# React + TypeScript + Vite
+# iamandrew.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal website written in TypeScript + React + Vite
 
-Currently, two official plugins are available:
+This project was bootstrapped with [Vite](https://vite.dev/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Developer Quickstart
 
-## Expanding the ESLint configuration
+1. Clone the repository
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+    `git clone https://github.com/ASteinheiser/iamandrew.io`
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Change to the directory containing the repository
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+    `cd iamandrew.io`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Ensure you are using the correct node version
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+    `nvm use`
+
+1. Install the dependencies
+
+    `pnpm i`
+
+1. Start the local dev server
+
+    `pnpm dev`
+
+## Build and Release
+
+This project uses [Github Pages](https://pages.github.com/) for deployment and hosting.
+
+To deploy, run: `pnpm deploy`
