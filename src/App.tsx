@@ -1,31 +1,79 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { scroller } from 'react-scroll';
 
-function App() {
-  const [count, setCount] = useState(0);
+import Journey from './components/Journey';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import InteractiveStars from './components/InteractiveStars';
+import Work from './components/Work';
+import Sensor from './components/Sensor';
+import TopBar from './components/TopBar';
+import useScrollUp from './hooks/use-scroll-up.js';
+
+const App = () => {
+  const [active, setActive] = useState('home');
+  const scrollUp = useScrollUp();
+
+  function navigate(section: string) {
+    scroller.scrollTo(section, {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+      offset: -70,
+    });
+  }
+
+  function changeVisible(isVisible: boolean, section: string) {
+    if (isVisible) {
+      setActive(section);
+    }
+    // handle case for switch sections when scrolling up
+    // because the sensor component either detects elements
+    // completely in view, or based off offset from top of elements.
+    // this handles switching 'active' sections when scrolling up into
+    // sections that stretch past the screen height (specifically on Mobile)
+    else if (!isVisible && scrollUp) {
+      switch (section) {
+        case 'work':
+          if (active === 'work') setActive('home');
+          break;
+        case 'journey':
+          if (active === 'journey') setActive('work');
+          break;
+        case 'contact':
+          if (active === 'contact') setActive('journey');
+          break;
+        default:
+      }
+    }
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <TopBar active={active} navigate={navigate} />
+
+      <Sensor onChange={(isVisible) => changeVisible(isVisible, 'home')}>
+        <InteractiveStars name="home" />
+      </Sensor>
+
+      <div className="max-width">
+        <Sensor onChange={(isVisible) => changeVisible(isVisible, 'work')}>
+          <Work name="work" />
+        </Sensor>
+
+        <Sensor onChange={(isVisible) => changeVisible(isVisible, 'journey')}>
+          <Journey name="journey" />
+        </Sensor>
+
+        <Sensor onChange={(isVisible) => changeVisible(isVisible, 'contact')}>
+          <>
+            <Contact name="contact" />
+            <Footer />
+          </>
+        </Sensor>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </>
   );
-}
+};
 
 export default App;
