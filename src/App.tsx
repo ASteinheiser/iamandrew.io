@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { scroller } from 'react-scroll';
+import { InView } from 'react-intersection-observer';
 
 import Journey from './components/Journey';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import InteractiveStars from './components/InteractiveStars';
 import Work from './components/Work';
-import Sensor from './components/Sensor';
 import TopBar from './components/TopBar';
 import useScrollUp from './hooks/use-scroll-up.js';
 
@@ -52,25 +52,25 @@ const App = () => {
     <>
       <TopBar active={active} navigate={navigate} />
 
-      <Sensor onChange={(isVisible) => changeVisible(isVisible, 'home')}>
+      {/* <InView onChange={(isVisible) => changeVisible(isVisible, 'home')}>
         <InteractiveStars name="home" />
-      </Sensor>
+      </InView> */}
 
       <div className="max-width">
-        <Sensor onChange={(isVisible) => changeVisible(isVisible, 'work')}>
+        <InView onChange={(isVisible) => changeVisible(isVisible, 'work')}>
           <Work name="work" />
-        </Sensor>
+        </InView>
 
-        <Sensor onChange={(isVisible) => changeVisible(isVisible, 'journey')}>
+        <InView onChange={(isVisible) => changeVisible(isVisible, 'journey')}>
           <Journey name="journey" />
-        </Sensor>
+        </InView>
 
-        <Sensor onChange={(isVisible) => changeVisible(isVisible, 'contact')}>
+        <InView onChange={(isVisible) => changeVisible(isVisible, 'contact')}>
           <>
             <Contact name="contact" />
             <Footer />
           </>
-        </Sensor>
+        </InView>
       </div>
     </>
   );

@@ -1,8 +1,8 @@
 import { useState } from 'react';
+import { InView } from 'react-intersection-observer';
 
 import Projects from './projects.json';
 import WorkBubble from './WorkBubble';
-import Sensor from '../Sensor';
 
 import './my-work.scss';
 
@@ -22,9 +22,8 @@ const MyWork = ({ name }: MyWorkProps) => {
           const { title } = item;
 
           return (
-            <Sensor
+            <InView
               key={index}
-              minTopValue={400}
               onChange={(isVisible) => {
                 if (isVisible) {
                   setActivePost(title);
@@ -34,7 +33,7 @@ const MyWork = ({ name }: MyWorkProps) => {
               }}
             >
               <WorkBubble data={item} active={activePost === title} />
-            </Sensor>
+            </InView>
           );
         })}
       </div>
