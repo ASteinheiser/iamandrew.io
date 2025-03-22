@@ -1,0 +1,50 @@
+[
+  {
+    "icon": "devices",
+    "title": "SIBI",
+    "year": "2021 - Today",
+    "description": "Senior engineer focusing on creating solutions for our real estate clients."
+  },
+  {
+    "icon": "cloud_queue",
+    "title": "Magic Leap",
+    "year": "2020 - 21",
+    "description": "Engineered the clouds for the Magicverse. Created APIs for enterprise AR."
+  },
+  {
+    "icon": "phone_iphone",
+    "title": "SIBI",
+    "year": "2019 - 20",
+    "description": "Developed mobile apps to connect real estate funds direct to manufacturers."
+  },
+  {
+    "icon": "insert_emoticon",
+    "title": "Freelancer",
+    "year": "2018 - 19",
+    "description": "Consulted various clients using tools from Shopify to React & Node.js."
+  },
+  {
+    "icon": "code",
+    "title": "Fyresite",
+    "year": "2017 - 19",
+    "description": "Followed projects through from the client's idea to final product release."
+  },
+  {
+    "icon": "color_lens",
+    "title": "SAVG Thread",
+    "year": "2017 - 18",
+    "description": "Designed kimonos and t-shirts that got showcased in multiple fashion shows."
+  },
+  {
+    "icon": "school",
+    "title": "Arizona State",
+    "year": "2014 - 17",
+    "description": "Graduated ASU with a B.S. in Computer Science."
+  },
+  {
+    "icon": "build",
+    "title": "Octoblu",
+    "year": "2014 - 17",
+    "description": "Learned JavaScript by creating microservices, IoT automations, and robots."
+  }
+]
