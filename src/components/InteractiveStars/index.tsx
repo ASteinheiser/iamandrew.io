@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import './interactive-stars.scss';
 
@@ -39,12 +39,12 @@ interface Dot {
 
 export const InteractiveStars = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const [stars, setStars] = useState<Star[]>([]);
-  const [dots, setDots] = useState<Dot[]>([]);
-  const [mouseMoving, setMouseMoving] = useState(false);
-  const [mouseX, setMouseX] = useState(0);
-  const [mouseY, setMouseY] = useState(0);
-  const [mouseMoveChecker, setMouseMoveChecker] = useState<number | null>(null);
+  const starsRef = useRef<Star[]>([]);
+  const dotsRef = useRef<Dot[]>([]);
+  const mouseMovingRef = useRef(false);
+  const mouseXRef = useRef(0);
+  const mouseYRef = useRef(0);
+  const mouseMoveCheckerRef = useRef<number | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -148,7 +148,7 @@ export const InteractiveStars = () => {
       };
 
       const die = () => {
-        setDots((prevDots) => prevDots.filter((dot) => dot.id !== id));
+        dotsRef.current = dotsRef.current.filter((dot) => dot.id !== id);
       };
 
       return {
@@ -172,34 +172,34 @@ export const InteractiveStars = () => {
 
     function getPreviousDot(id: number, stepback: number): Dot | false {
       if (id === 0 || id - stepback < 0) return false;
-      return dots[id - stepback] || false;
+      return dotsRef.current[id - stepback] || false;
     }
 
     function animate() {
       if (!ctx) return;
       ctx.clearRect(0, 0, WIDTH, HEIGHT);
 
-      stars.forEach((star) => star.move());
-      dots.forEach((dot) => dot.move());
+      starsRef.current.forEach((star) => star.move());
+      dotsRef.current.forEach((dot) => dot.move());
       drawIfMouseMoving();
       requestAnimationFrame(animate);
     }
 
     function drawIfMouseMoving() {
-      if (!mouseMoving) return;
+      if (!mouseMovingRef.current) return;
 
-      if (dots.length === 0) {
-        const newDot = createDot(0, mouseX, mouseY);
-        setDots([newDot]);
+      if (dotsRef.current.length === 0) {
+        const newDot = createDot(0, mouseXRef.current, mouseYRef.current);
+        dotsRef.current = [newDot];
         newDot.draw();
         return;
       }
 
-      const previousDot = getPreviousDot(dots.length, 1);
+      const previousDot = getPreviousDot(dotsRef.current.length, 1);
       if (!previousDot) return;
 
-      const diffX = Math.abs(previousDot.x - mouseX);
-      const diffY = Math.abs(previousDot.y - mouseY);
+      const diffX = Math.abs(previousDot.x - mouseXRef.current);
+      const diffY = Math.abs(previousDot.y - mouseYRef.current);
 
       if (diffX < dotsMinDist || diffY < dotsMinDist) return;
 
@@ -207,8 +207,12 @@ export const InteractiveStars = () => {
         (Math.random() > 0.5 ? -1 : 1) * Math.floor(Math.random() * params.maxDistFromCursor) + 1;
       const yVariation =
         (Math.random() > 0.5 ? -1 : 1) * Math.floor(Math.random() * params.maxDistFromCursor) + 1;
-      const newDot = createDot(dots.length, mouseX + xVariation, mouseY + yVariation);
-      setDots((prevDots) => [...prevDots, newDot]);
+      const newDot = createDot(
+        dotsRef.current.length,
+        mouseXRef.current + xVariation,
+        mouseYRef.current + yVariation
+      );
+      dotsRef.current = [...dotsRef.current, newDot];
       newDot.draw();
       newDot.link();
     }
@@ -222,10 +226,9 @@ export const InteractiveStars = () => {
       if (!ctx) return;
       ctx.strokeStyle = 'white';
       ctx.shadowColor = 'white';
-      const initialStars = Array.from({ length: initStarsPopulation }, (_, i) =>
+      starsRef.current = Array.from({ length: initStarsPopulation }, (_, i) =>
         createStar(i, Math.floor(Math.random() * WIDTH), Math.floor(Math.random() * HEIGHT))
       );
-      setStars(initialStars);
       ctx.shadowBlur = 0;
       animate();
     }
@@ -233,19 +236,24 @@ export const InteractiveStars = () => {
     init();
 
     const handleMouseMove = (e: MouseEvent) => {
-      setMouseMoving(true);
-      setMouseX(e.layerX);
-      setMouseY(e.layerY);
-      if (mouseMoveChecker) clearTimeout(mouseMoveChecker);
-      setMouseMoveChecker(window.setTimeout(() => setMouseMoving(false), 100));
+      mouseMovingRef.current = true;
+      mouseXRef.current = e.layerX;
+      mouseYRef.current = e.layerY;
+      if (mouseMoveCheckerRef.current) clearTimeout(mouseMoveCheckerRef.current);
+      mouseMoveCheckerRef.current = window.setTimeout(() => {
+        mouseMovingRef.current = false;
+      }, 100);
     };
 
     canvas.addEventListener('mousemove', handleMouseMove);
 
     return () => {
+      if (mouseMoveCheckerRef.current) {
+        clearTimeout(mouseMoveCheckerRef.current);
+      }
       canvas.removeEventListener('mousemove', handleMouseMove);
     };
-  }, [dots, mouseMoveChecker, mouseMoving, mouseX, mouseY, stars]);
+  }, []); // Empty dependency array to run only once
 
   return (
     <div className="interactive-stars-container">
