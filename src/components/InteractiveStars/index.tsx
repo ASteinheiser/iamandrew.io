@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+import { Star } from './Star';
 import './interactive-stars.scss';
 
 const HEIGHT_PERCENT = 0.8; // 80% height
@@ -8,16 +9,6 @@ const BG_SPEED = 0; // default: 0
 const DOT_SPEED = -10; // default: 0
 const STAR_COUNT = 100; // default: 80
 const DOT_DISTANCE = 2; // default: 2
-
-interface StarObject {
-  id: number;
-  x: number;
-  y: number;
-  r: number;
-  color: string;
-  draw(): void;
-  move(): void;
-}
 
 interface DotObject {
   id: number;
@@ -60,38 +51,6 @@ export function InteractiveStars() {
       dotsSpeed: DOT_SPEED,
       backgroundSpeed: BG_SPEED,
     };
-
-    class Star implements StarObject {
-      id: number;
-      x: number;
-      y: number;
-      r: number;
-      color: string;
-
-      constructor(id: number, x: number, y: number) {
-        this.id = id;
-        this.x = x;
-        this.y = y;
-        this.r = Math.floor(Math.random() * 2) + 1;
-        const alpha = (Math.floor(Math.random() * 10) + 1) / 10 / 2;
-        this.color = 'rgba(255,255,255,' + alpha + ')';
-      }
-
-      draw(): void {
-        ctx.fillStyle = this.color;
-        ctx.shadowBlur = this.r * 2;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
-        ctx.closePath();
-        ctx.fill();
-      }
-
-      move(): void {
-        this.y -= 0.15 + params.backgroundSpeed / 100;
-        if (this.y <= -10) this.y = HEIGHT + 10;
-        this.draw();
-      }
-    }
 
     class Dot implements DotObject {
       id: number;
@@ -194,11 +153,14 @@ export function InteractiveStars() {
       ctx.strokeStyle = 'white';
       ctx.shadowColor = 'white';
       for (let i = 0; i < initStarsPopulation; i++) {
-        stars[i] = new Star(
-          i,
-          Math.floor(Math.random() * WIDTH),
-          Math.floor(Math.random() * HEIGHT)
-        );
+        stars[i] = new Star({
+          id: i,
+          x: Math.floor(Math.random() * WIDTH),
+          y: Math.floor(Math.random() * HEIGHT),
+          canvas: ctx,
+          canvasHeight: HEIGHT,
+          backgroundSpeed: BG_SPEED,
+        });
       }
       ctx.shadowBlur = 0;
       animate();
