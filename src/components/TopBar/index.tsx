@@ -2,7 +2,6 @@ import Headroom from 'react-headroom';
 import { isMobile } from 'react-device-detect';
 
 import Logo from './logo.svg';
-
 import './top-bar.scss';
 
 interface TopBarProps {
@@ -10,7 +9,7 @@ interface TopBarProps {
   navigate: (section: string) => void;
 }
 
-const TopBar = ({ active, navigate }: TopBarProps) => {
+export const TopBar = ({ active, navigate }: TopBarProps) => {
   return (
     <Headroom>
       <div className={`top-bar-container ${!isMobile ? 'top-bar-container--desktop' : ''}`}>
@@ -44,5 +43,3 @@ const TopBar = ({ active, navigate }: TopBarProps) => {
     </Headroom>
   );
 };
-
-export default TopBar;

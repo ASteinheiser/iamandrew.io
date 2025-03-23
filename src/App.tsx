@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { scroller } from 'react-scroll';
 import { InView } from 'react-intersection-observer';
 
-import TopBar from './components/TopBar';
+import { TopBar } from './components/TopBar';
 import InteractiveStars from './components/InteractiveStars';
 import { Footer } from './components/Footer';
 import { useScrollUp } from './hooks/use-scroll-up.js';
