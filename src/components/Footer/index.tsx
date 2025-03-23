@@ -1,6 +1,6 @@
 import './footer.scss';
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <div className="footer-container">
       {'Made with ♥ by Andrew Steinheiser'}
@@ -15,5 +15,3 @@ const Footer = () => {
     </div>
   );
 };
-
-export default Footer;

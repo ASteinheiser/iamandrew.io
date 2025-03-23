@@ -2,12 +2,9 @@ import { useState } from 'react';
 import { scroller } from 'react-scroll';
 import { InView } from 'react-intersection-observer';
 
-import Journey from './components/Journey';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import InteractiveStars from './components/InteractiveStars';
-import Work from './components/Work';
 import TopBar from './components/TopBar';
+import InteractiveStars from './components/InteractiveStars';
+import { Footer } from './components/Footer';
 import { useScrollUp } from './hooks/use-scroll-up.js';
 
 export const App = () => {
@@ -53,23 +50,12 @@ export const App = () => {
       <TopBar active={active} navigate={navigate} />
 
       {/* <InView onChange={(isVisible) => changeVisible(isVisible, 'home')}>
-        <InteractiveStars name="home" />
+        <InteractiveStars />
       </InView> */}
 
       <div className="max-width">
-        <InView onChange={(isVisible) => changeVisible(isVisible, 'work')}>
-          <Work name="work" />
-        </InView>
-
-        <InView onChange={(isVisible) => changeVisible(isVisible, 'journey')}>
-          <Journey name="journey" />
-        </InView>
-
         <InView onChange={(isVisible) => changeVisible(isVisible, 'contact')}>
-          <>
-            <Contact name="contact" />
-            <Footer />
-          </>
+          <Footer />
         </InView>
       </div>
     </>
