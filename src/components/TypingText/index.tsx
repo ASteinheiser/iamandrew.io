@@ -1,7 +1,7 @@
 import TextType from './text-type';
 import './typing-text.scss';
 
-const TYPING_TEXT_WORDS = ['ANDREW', 'A SOFTWARE DEV', 'A SKATER', 'A CREATOR'];
+const TYPING_TEXT_WORDS = ['ANDREW', 'A DEVELOPER', 'A SKATER', 'A CREATOR'];
 
 export const TypingText = () => {
   window.onload = function () {
