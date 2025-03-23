@@ -7,7 +7,7 @@
   "scripts": {
     "predeploy": "pnpm run build",
     "deploy": "gh-pages -d dist",
-    "dev": "vite",
+    "dev": "vite --port 4200",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
