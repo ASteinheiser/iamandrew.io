@@ -1,32 +1,16 @@
 import { useEffect, useRef } from 'react';
 
+import { Dot } from './Dot';
 import { Star } from './Star';
 import './interactive-stars.scss';
 
 const HEIGHT_PERCENT = 0.8; // 80% height
-const MAX_DISTANCE = 50; // default: 50
+const STAR_COUNT = 100; // default: 80
 const BG_SPEED = 0; // default: 0
 const DOT_SPEED = -10; // default: 0
-const STAR_COUNT = 100; // default: 80
-const DOT_DISTANCE = 2; // default: 2
-
-interface DotObject {
-  id: number;
-  x: number;
-  y: number;
-  r: number;
-  maxLinks: number;
-  speed: number;
-  a: number;
-  aReduction: number;
-  color: string;
-  linkColor: string;
-  dir: number;
-  draw(): void;
-  link(): void;
-  move(): void;
-  die(): void;
-}
+const MIN_DISTANCE = 2; // default: 2
+const MAX_DISTANCE = 50; // default: 50
+const DOT_COLOR = 'rgba(73,47,159,1)';
 
 export function InteractiveStars() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -45,87 +29,6 @@ export function InteractiveStars() {
     const stars: Star[] = [];
     const initStarsPopulation = STAR_COUNT;
     const dots: (Dot | null)[] = [];
-    const dotsMinDist = DOT_DISTANCE;
-    const params = {
-      maxDistFromCursor: MAX_DISTANCE,
-      dotsSpeed: DOT_SPEED,
-      backgroundSpeed: BG_SPEED,
-    };
-
-    class Dot implements DotObject {
-      id: number;
-      x: number;
-      y: number;
-      r: number;
-      maxLinks: number;
-      speed: number;
-      a: number;
-      aReduction: number;
-      color: string;
-      linkColor: string;
-      dir: number;
-
-      constructor(id: number, x: number, y: number) {
-        this.id = id;
-        this.x = x;
-        this.y = y;
-        this.r = Math.floor(Math.random() * 5) + 3;
-        this.maxLinks = 2;
-        this.speed = 0.5;
-        this.a = 0.5;
-        this.aReduction = 0.005;
-        this.color = 'rgba(73,47,159,1)';
-        this.linkColor = 'rgba(124,124,124,' + this.a + ')';
-        this.dir = Math.floor(Math.random() * 140) + 200;
-      }
-
-      draw(): void {
-        ctx.fillStyle = this.color;
-        ctx.shadowBlur = this.r * 2;
-        ctx.shadowColor = 'rgb(73,47,159)';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
-        ctx.closePath();
-        ctx.fill();
-      }
-
-      link(): void {
-        if (this.id === 0) return;
-        const previousDot1 = getPreviousDot(this.id, 1);
-        const previousDot2 = getPreviousDot(this.id, 2);
-        const previousDot3 = getPreviousDot(this.id, 3);
-        if (!previousDot1) return;
-        ctx.strokeStyle = this.linkColor;
-        ctx.lineWidth = 2;
-        ctx.moveTo(previousDot1.x, previousDot1.y);
-        ctx.beginPath();
-        ctx.lineTo(this.x, this.y);
-        if (previousDot2 !== false) ctx.lineTo(previousDot2.x, previousDot2.y);
-        if (previousDot3 !== false) ctx.lineTo(previousDot3.x, previousDot3.y);
-        ctx.stroke();
-        ctx.closePath();
-      }
-
-      move(): void {
-        this.a -= this.aReduction;
-        if (this.a <= 0) {
-          this.die();
-          return;
-        }
-        this.color = 'rgba(73,47,159,1)';
-        this.linkColor = 'rgba(124,124,124,' + this.a + ')';
-        this.x = this.x + Math.cos(degToRad(this.dir)) * (this.speed + params.dotsSpeed / 100);
-        this.y = this.y + Math.sin(degToRad(this.dir)) * (this.speed + params.dotsSpeed / 100);
-
-        this.draw();
-        this.link();
-      }
-
-      die(): void {
-        dots[this.id] = null;
-        delete dots[this.id];
-      }
-    }
 
     function getPreviousDot(id: number, stepback: number): Dot | false {
       if (id === 0 || id - stepback < 0) return false;
@@ -134,22 +37,20 @@ export function InteractiveStars() {
       return false;
     }
 
-    function degToRad(deg: number): number {
-      return deg * (Math.PI / 180);
+    function killDot(id: number): void {
+      dots[id] = null;
+      delete dots[id];
     }
 
-    setCanvasSize();
     init();
 
-    function setCanvasSize() {
+    function init() {
       WIDTH = document.documentElement.clientWidth;
       HEIGHT = document.documentElement.clientHeight * HEIGHT_PERCENT;
 
       canvas.setAttribute('width', WIDTH.toString());
       canvas.setAttribute('height', HEIGHT.toString());
-    }
 
-    function init() {
       ctx.strokeStyle = 'white';
       ctx.shadowColor = 'white';
       for (let i = 0; i < initStarsPopulation; i++) {
@@ -157,7 +58,7 @@ export function InteractiveStars() {
           id: i,
           x: Math.floor(Math.random() * WIDTH),
           y: Math.floor(Math.random() * HEIGHT),
-          canvas: ctx,
+          canvasContext: ctx,
           canvasHeight: HEIGHT,
           backgroundSpeed: BG_SPEED,
         });
@@ -193,7 +94,17 @@ export function InteractiveStars() {
       if (!mouseMoving) return;
 
       if (dots.length === 0) {
-        dots[0] = new Dot(0, mouseX, mouseY);
+        dots[0] = new Dot({
+          id: 0,
+          x: mouseX,
+          y: mouseY,
+          color: DOT_COLOR,
+          dotSpeed: DOT_SPEED,
+          canvasContext: ctx,
+          canvasHeight: HEIGHT,
+          getPreviousDot,
+          die: () => killDot(0),
+        });
         dots[0].draw();
         return;
       }
@@ -207,15 +118,25 @@ export function InteractiveStars() {
       const diffX = Math.abs(prevX - mouseX);
       const diffY = Math.abs(prevY - mouseY);
 
-      if (diffX < dotsMinDist || diffY < dotsMinDist) return;
+      if (diffX < MIN_DISTANCE || diffY < MIN_DISTANCE) return;
 
       let xVariation = Math.random() > 0.5 ? -1 : 1;
-      xVariation = xVariation * Math.floor(Math.random() * params.maxDistFromCursor) + 1;
+      xVariation = xVariation * Math.floor(Math.random() * MAX_DISTANCE) + 1;
       let yVariation = Math.random() > 0.5 ? -1 : 1;
-      yVariation = yVariation * Math.floor(Math.random() * params.maxDistFromCursor) + 1;
+      yVariation = yVariation * Math.floor(Math.random() * MAX_DISTANCE) + 1;
 
       const newDotIndex = dots.length;
-      dots[newDotIndex] = new Dot(newDotIndex, mouseX + xVariation, mouseY + yVariation);
+      dots[newDotIndex] = new Dot({
+        id: newDotIndex,
+        x: mouseX + xVariation,
+        y: mouseY + yVariation,
+        color: DOT_COLOR,
+        dotSpeed: DOT_SPEED,
+        canvasContext: ctx,
+        canvasHeight: HEIGHT,
+        getPreviousDot,
+        die: () => killDot(newDotIndex),
+      });
 
       const latestDot = dots[dots.length - 1];
       if (latestDot) {
