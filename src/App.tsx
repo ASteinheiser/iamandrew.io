@@ -4,6 +4,7 @@ import { InView } from 'react-intersection-observer';
 
 import { TopBar } from './components/TopBar';
 import InteractiveStars from './components/InteractiveStars';
+import { TypingText } from './components/TypingText';
 import { Footer } from './components/Footer';
 import { useScrollUp } from './hooks/use-scroll-up.js';
 
@@ -49,9 +50,10 @@ export const App = () => {
     <>
       <TopBar active={active} navigate={navigate} />
 
-      {/* <InView onChange={(isVisible) => changeVisible(isVisible, 'home')}>
-        <InteractiveStars />
-      </InView> */}
+      <InView onChange={(isVisible) => changeVisible(isVisible, 'home')}>
+        {/* <InteractiveStars /> */}
+        <TypingText />
+      </InView>
 
       <div className="max-width">
         <InView onChange={(isVisible) => changeVisible(isVisible, 'contact')}>

@@ -1,15 +1,14 @@
 import TextType from './text-type';
-
 import './typing-text.scss';
 
-const TYPING_TEXT = ['ANDREW', 'A FULLSTACK DEV', 'A SKATER', 'A CREATOR', '....'];
+const TYPING_TEXT_WORDS = ['ANDREW', 'A SOFTWARE DEV', 'A SKATER', 'A CREATOR'];
 
-const TypingText = () => {
+export const TypingText = () => {
   window.onload = function () {
     const elements = document.getElementsByClassName('wrap');
 
     for (let i = 0; i < elements.length; i++) {
-      new TextType(elements[i], TYPING_TEXT);
+      new TextType(elements[i], TYPING_TEXT_WORDS);
     }
   };
 
@@ -23,5 +22,3 @@ const TypingText = () => {
     </div>
   );
 };
-
-export default TypingText;

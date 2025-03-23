@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-import TypingText from '../TypingText';
+// import TypingText from '../TypingText';
 
 import './interactive-stars.scss';
 
@@ -216,7 +216,7 @@ export default class InteractiveStars extends Component {
       <div id={this.props.name} className="interactive-stars-container">
         <canvas id="canvas" ref="canvas" />
 
-        <TypingText />
+        {/* <TypingText /> */}
       </div>
     );
   }
