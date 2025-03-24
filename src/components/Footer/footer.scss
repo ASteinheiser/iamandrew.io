@@ -8,6 +8,10 @@
   font-size: 24px;
   color: var(--purple);
   font-family: 'Montserrat';
+
+  a {
+    margin: 35px auto 0;
+  }
 }
 
 @media(max-width: 800px) {
