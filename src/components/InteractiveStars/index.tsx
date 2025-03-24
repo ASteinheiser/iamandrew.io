@@ -36,10 +36,6 @@ export function InteractiveStars() {
       return false;
     };
 
-    const killDot = (id: number) => {
-      delete dots[id];
-    };
-
     const resizeCanvas = () => {
       WIDTH = document.documentElement.clientWidth;
       HEIGHT = document.documentElement.clientHeight * HEIGHT_PERCENT;
@@ -121,8 +117,9 @@ export function InteractiveStars() {
           canvasContext: ctx,
           canvasHeight: HEIGHT,
           getPreviousDot,
-          die: () => killDot(0),
+          die: () => delete dots[0],
         });
+
         dots[0].draw();
         return;
       }
@@ -153,7 +150,7 @@ export function InteractiveStars() {
         canvasContext: ctx,
         canvasHeight: HEIGHT,
         getPreviousDot,
-        die: () => killDot(newDotIndex),
+        die: () => delete dots[newDotIndex],
       });
 
       const latestDot = dots[dots.length - 1];
