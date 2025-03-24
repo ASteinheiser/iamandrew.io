@@ -1,18 +1,19 @@
 import { degreesToRadians } from './degreesToRadians';
 
+const BASE_SPEED = 0.5;
+
 interface DotObject {
   id: number;
   x: number;
   y: number;
   r: number;
   maxLinks: number;
-  baseSpeed: number;
+  speed: number;
   a: number;
   aReduction: number;
   color: string;
   linkColor: string;
   dir: number;
-  dotSpeed: number;
   canvasContext: CanvasRenderingContext2D;
   canvasHeight: number;
   getPreviousDot: (id: number, stepback: number) => Dot | false;
@@ -42,13 +43,12 @@ export class Dot implements DotObject {
   y: number;
   r: number;
   maxLinks: number;
-  baseSpeed: number;
+  speed: number;
   a: number;
   aReduction: number;
   color: string;
   linkColor: string;
   dir: number;
-  dotSpeed: number;
   canvasContext: CanvasRenderingContext2D;
   canvasHeight: number;
   getPreviousDot: (id: number, stepback: number) => Dot | false;
@@ -59,7 +59,7 @@ export class Dot implements DotObject {
     x,
     y,
     color,
-    dotSpeed,
+    speed,
     canvasContext,
     canvasHeight,
     getPreviousDot,
@@ -70,13 +70,12 @@ export class Dot implements DotObject {
     this.y = y;
     this.r = Math.floor(Math.random() * 5) + 3;
     this.maxLinks = 2;
-    this.baseSpeed = 0.5;
+    this.speed = BASE_SPEED + speed;
     this.a = 0.5;
     this.aReduction = 0.005;
     this.color = color;
     this.linkColor = 'rgba(124,124,124,' + this.a + ')';
     this.dir = Math.floor(Math.random() * 140) + 200;
-    this.dotSpeed = dotSpeed;
     this.canvasContext = canvasContext;
     this.canvasHeight = canvasHeight;
     this.getPreviousDot = getPreviousDot;
@@ -117,8 +116,8 @@ export class Dot implements DotObject {
       return;
     }
     this.linkColor = 'rgba(124,124,124,' + this.a + ')';
-    this.x = this.x + Math.cos(degreesToRadians(this.dir)) * (this.baseSpeed + this.dotSpeed / 100);
-    this.y = this.y + Math.sin(degreesToRadians(this.dir)) * (this.baseSpeed + this.dotSpeed / 100);
+    this.x = this.x + Math.cos(degreesToRadians(this.dir)) * (this.speed / 100);
+    this.y = this.y + Math.sin(degreesToRadians(this.dir)) * (this.speed / 100);
 
     this.draw();
     this.link();
