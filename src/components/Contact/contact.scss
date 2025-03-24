@@ -4,16 +4,20 @@
   align-items: center;
   justify-content: center;
 
+  padding: 50px 25px;
+
   .contact-image {
-    height: 250px;
+    height: 300px;
     width: auto;
     border-radius: 50%;
   }
 
   .contact-content-divider {
     width: 1px;
-    height: 100px;
+    height: 170px;
     background-color: var(--purple);
+
+    margin: 0 50px;
   }
 
   .contact-content {
@@ -25,6 +29,8 @@
       flex-direction: row;
       align-items: center;
 
+      margin: 10px 0 10px;
+
       a {
         font-size: 24px;
         font-family: 'Montserrat';
@@ -33,6 +39,8 @@
       img {
         height: 40px;
         width: auto;
+
+        margin-right: 15px;
       }
     }
   }
