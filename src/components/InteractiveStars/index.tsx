@@ -26,8 +26,8 @@ export function InteractiveStars() {
     let mouseMoveChecker: ReturnType<typeof setTimeout>;
     let mouseX: number;
     let mouseY: number;
-    const stars: Star[] = [];
-    const dots: (Dot | null)[] = [];
+    const stars: Array<Star> = [];
+    const dots: Array<Dot> = [];
 
     const getPreviousDot = (id: number, stepback: number): Dot | false => {
       if (id === 0 || id - stepback < 0) return false;
@@ -37,7 +37,6 @@ export function InteractiveStars() {
     };
 
     const killDot = (id: number) => {
-      dots[id] = null;
       delete dots[id];
     };
 
