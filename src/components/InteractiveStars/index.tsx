@@ -30,26 +30,28 @@ export function InteractiveStars() {
     const initStarsPopulation = STAR_COUNT;
     const dots: (Dot | null)[] = [];
 
-    function getPreviousDot(id: number, stepback: number): Dot | false {
+    const getPreviousDot = (id: number, stepback: number): Dot | false => {
       if (id === 0 || id - stepback < 0) return false;
       const dot = dots[id - stepback];
       if (dot !== null && dot !== undefined) return dot;
       return false;
-    }
+    };
 
-    function killDot(id: number): void {
+    const killDot = (id: number): void => {
       dots[id] = null;
       delete dots[id];
-    }
+    };
 
-    init();
-
-    function init() {
+    const resizeCanvas = () => {
       WIDTH = document.documentElement.clientWidth;
       HEIGHT = document.documentElement.clientHeight * HEIGHT_PERCENT;
 
       canvas.setAttribute('width', WIDTH.toString());
       canvas.setAttribute('height', HEIGHT.toString());
+    };
+
+    const init = () => {
+      resizeCanvas();
 
       ctx.strokeStyle = 'white';
       ctx.shadowColor = 'white';
@@ -65,9 +67,27 @@ export function InteractiveStars() {
       }
       ctx.shadowBlur = 0;
       animate();
-    }
+    };
 
-    function animate() {
+    const handleResize = () => {
+      resizeCanvas();
+      // reset dots
+      dots.length = 0;
+      // Reset stars with new dimensions
+      stars.length = 0;
+      for (let i = 0; i < initStarsPopulation; i++) {
+        stars[i] = new Star({
+          id: i,
+          x: Math.floor(Math.random() * WIDTH),
+          y: Math.floor(Math.random() * HEIGHT),
+          canvasContext: ctx,
+          canvasHeight: HEIGHT,
+          backgroundSpeed: BG_SPEED,
+        });
+      }
+    };
+
+    const animate = () => {
       ctx.clearRect(0, 0, WIDTH, HEIGHT);
 
       for (const i in stars) {
@@ -78,7 +98,7 @@ export function InteractiveStars() {
       }
       drawIfMouseMoving();
       requestAnimationFrame(animate);
-    }
+    };
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseMoving = true;
@@ -90,7 +110,7 @@ export function InteractiveStars() {
       }, 100);
     };
 
-    function drawIfMouseMoving() {
+    const drawIfMouseMoving = () => {
       if (!mouseMoving) return;
 
       if (dots.length === 0) {
@@ -143,11 +163,16 @@ export function InteractiveStars() {
         latestDot.draw();
         latestDot.link();
       }
-    }
+    };
+
+    init();
 
     canvas.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('resize', handleResize);
+
     return () => {
       canvas.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
