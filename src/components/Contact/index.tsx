@@ -14,19 +14,19 @@ export const Contact = () => {
       <div className="contact-content-divider" />
 
       <div className="contact-content">
-        <div>
+        <div className="contact-item-wrap">
           <img src={Mail} alt="email" />
           <a href="mailto:me@iamandrew.io">me@iamandrew.io</a>
         </div>
 
-        <div>
+        <div className="contact-item-wrap">
           <img src={GitHub} alt="github" />
           <a href="https://github.com/asteinheiser" target="_blank" rel="noopener noreferrer">
             github/ASteinheiser
           </a>
         </div>
 
-        <div>
+        <div className="contact-item-wrap">
           <img src={LinkedIn} alt="LinkedIn" />
           <a
             href="https://www.linkedin.com/in/asteinheiser/"
@@ -37,7 +37,7 @@ export const Contact = () => {
           </a>
         </div>
 
-        <div>
+        <div className="contact-item-wrap">
           <img src={Briefcase} alt="briefcase" />
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
             View Resume

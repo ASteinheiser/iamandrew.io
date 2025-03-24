@@ -3,21 +3,32 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-}
 
-.contact-image {
-  max-height: 248px;
-  width: auto;
-  border-radius: 50%;
-}
+  .contact-image {
+    max-height: 248px;
+    width: auto;
+    border-radius: 50%;
+  }
 
-.contact-content {
-  display: flex;
-  flex-direction: column;
-}
+  .contact-content-divider {
+    width: 1px;
+    height: 100px;
+    background-color: var(--purple);
+  }
 
-.contact-content-divider {
-  width: 1px;
-  height: 100px;
-  background-color: var(--purple);
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+
+    .contact-item-wrap {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      a {
+        font-size: 24px;
+        font-family: 'Montserrat';
+      }
+    }
+  }
 }
