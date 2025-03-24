@@ -30,17 +30,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.max-width {
-  max-width: 1200px;
-  margin: auto;
-}
-
 a {
   color: var(--purple);
   text-decoration: none;
 
   padding-bottom: 4px;
   border-bottom: 1px solid var(--purple);
+}
+
+.max-width {
+  max-width: 1200px;
+  margin: auto;
 }
 
 .icon {
