@@ -5,6 +5,8 @@ import { InView } from 'react-intersection-observer';
 import { TopBar, APP_SECTION } from './components/TopBar';
 import { InteractiveStars } from './components/InteractiveStars';
 import { TypingText } from './components/TypingText';
+import { Work } from './components/Work';
+import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { useScrollUp } from './hooks/use-scroll-up.js';
 
@@ -60,13 +62,14 @@ export const App = () => {
           id={APP_SECTION.WORK}
           onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.WORK)}
         >
-          <div>work</div>
+          <Work />
         </InView>
 
         <InView
           id={APP_SECTION.CONTACT}
           onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.CONTACT)}
         >
+          <Contact />
           <Footer />
         </InView>
       </div>
