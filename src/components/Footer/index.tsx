@@ -1,4 +1,4 @@
-import Code from './code.svg';
+import Code from '../../assets/code.svg';
 import './footer.scss';
 
 export const Footer = () => {
