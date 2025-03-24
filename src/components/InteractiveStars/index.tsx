@@ -27,7 +27,6 @@ export function InteractiveStars() {
     let mouseX: number;
     let mouseY: number;
     const stars: Star[] = [];
-    const initStarsPopulation = STAR_COUNT;
     const dots: (Dot | null)[] = [];
 
     const getPreviousDot = (id: number, stepback: number): Dot | false => {
@@ -57,7 +56,7 @@ export function InteractiveStars() {
       ctx.shadowColor = 'white';
       ctx.shadowBlur = 0;
 
-      for (let i = 0; i < initStarsPopulation; i++) {
+      for (let i = 0; i < STAR_COUNT; i++) {
         stars[i] = new Star({
           id: i,
           x: Math.floor(Math.random() * WIDTH),
@@ -77,7 +76,7 @@ export function InteractiveStars() {
       dots.length = 0;
       stars.length = 0;
 
-      for (let i = 0; i < initStarsPopulation; i++) {
+      for (let i = 0; i < STAR_COUNT; i++) {
         stars[i] = new Star({
           id: i,
           x: Math.floor(Math.random() * WIDTH),
