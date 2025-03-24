@@ -1,4 +1,4 @@
-import TextType from './text-type';
+import { TextType } from './text-type';
 import './typing-text.scss';
 
 const TYPING_TEXT_WORDS = ['ANDREW', 'A DEVELOPER', 'A SKATER', 'A CREATOR'];
@@ -8,7 +8,7 @@ export const TypingText = () => {
     const elements = document.getElementsByClassName('wrap');
 
     for (let i = 0; i < elements.length; i++) {
-      new TextType(elements[i], TYPING_TEXT_WORDS);
+      new TextType({ element: elements[i] as HTMLElement, wordRotation: TYPING_TEXT_WORDS });
     }
   };
 
