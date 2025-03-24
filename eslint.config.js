@@ -42,7 +42,8 @@ export default tseslint.config(
           varsIgnorePattern: '^_+$',
           ignoreRestSiblings: true,
         }
-      ]
+      ],
+      'react-refresh/only-export-components': 'off',
     },
   },
 )
