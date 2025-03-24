@@ -4,6 +4,10 @@
 
   padding: 10px 20px;
 
+  @media(max-width: 800px) {
+    padding: 10px 10px;
+  }
+
   .top-bar-inner-wrap {
     display: flex;
     flex-direction: row;
@@ -20,6 +24,11 @@
     user-select: none;
 
     padding: 2px;
+
+    @media(max-width: 800px) {
+      height: 40px;
+      width: 40px;
+    }
   }
 
   .top-bar-item-wrap {
@@ -35,6 +44,11 @@
 
     cursor: pointer;
     user-select: none;
+
+    @media(max-width: 800px) {
+      font-size: 18px;
+      padding: 0 10px;
+    }
   }
 
   .top-bar-item:hover {
@@ -45,21 +59,5 @@
   .active {
     color: var(--purple);
     font-weight: 500;
-  }
-}
-
-@media(max-width: 800px) {
-  .top-bar-wrap {
-    padding: 10px 10px;
-
-    .top-bar-logo {
-      height: 40px;
-      width: 40px;
-    }
-
-    .top-bar-item {
-      font-size: 18px;
-      padding: 0 10px;
-    }
   }
 }
