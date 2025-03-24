@@ -10,7 +10,7 @@ const BG_SPEED = 0; // default: 0
 const DOT_SPEED = -10; // default: 0
 const MIN_DISTANCE = 2; // default: 2
 const MAX_DISTANCE = 50; // default: 50
-const DOT_COLOR = 'rgba(73,47,159,1)';
+const DOT_COLOR = '#492f9f';
 
 export function InteractiveStars() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
