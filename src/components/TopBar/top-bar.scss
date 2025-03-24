@@ -35,18 +35,16 @@
     user-select: none;
   }
 
-  .active {
-    color: var(--purple);
-    font-weight: 500;
-  }
-}
-
-.top-bar-container--desktop {
   .top-bar-item {
     &:hover {
       color: var(--purple);
       font-weight: 500;
     }
+  }
+
+  .active {
+    color: var(--purple);
+    font-weight: 500;
   }
 }
 
