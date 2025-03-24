@@ -70,7 +70,7 @@ export class Dot implements DotObject {
     this.y = y;
     this.r = Math.floor(Math.random() * 5) + 3;
     this.maxLinks = 2;
-    this.speed = BASE_SPEED + speed;
+    this.speed = speed;
     this.a = 0.5;
     this.aReduction = 0.005;
     this.color = color;
@@ -84,8 +84,8 @@ export class Dot implements DotObject {
 
   draw(): void {
     this.canvasContext.fillStyle = this.color;
+    this.canvasContext.shadowColor = this.color;
     this.canvasContext.shadowBlur = this.r * 2;
-    this.canvasContext.shadowColor = 'rgb(73,47,159)';
     this.canvasContext.beginPath();
     this.canvasContext.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
     this.canvasContext.closePath();
@@ -116,8 +116,8 @@ export class Dot implements DotObject {
       return;
     }
     this.linkColor = 'rgba(124,124,124,' + this.a + ')';
-    this.x = this.x + Math.cos(degreesToRadians(this.dir)) * (this.speed / 100);
-    this.y = this.y + Math.sin(degreesToRadians(this.dir)) * (this.speed / 100);
+    this.x = this.x + Math.cos(degreesToRadians(this.dir)) * (BASE_SPEED + this.speed / 100);
+    this.y = this.y + Math.sin(degreesToRadians(this.dir)) * (BASE_SPEED + this.speed / 100);
 
     this.draw();
     this.link();
