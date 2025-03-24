@@ -1,4 +1,4 @@
-import { degreesToRadians } from './degreesToRadians';
+import { degreesToRadians } from './degrees-to-radians';
 
 const BASE_SPEED = 0.5;
 
