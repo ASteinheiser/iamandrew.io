@@ -1,17 +1,21 @@
+import { useWindowSize } from '../../hooks/use-window-size';
 import ProfilePic from './assets/me.png';
 import Mail from './assets/mail.svg';
 import LinkedIn from './assets/linkedin.svg';
 import GitHub from './assets/github.svg';
 import Briefcase from './assets/briefcase.svg';
-
 import './contact.scss';
 
 export const Contact = () => {
+  const { width } = useWindowSize();
+
+  const isDesktop = width > 800;
+
   return (
     <div className="contact-container">
       <img src={ProfilePic} alt="Andrew Steinheiser" className="contact-image" />
 
-      <div className="contact-content-divider" />
+      {isDesktop && <div className="contact-content-divider" />}
 
       <div className="contact-content">
         <div className="contact-item-wrap">
