@@ -37,7 +37,7 @@ export function InteractiveStars() {
       return false;
     };
 
-    const killDot = (id: number): void => {
+    const killDot = (id: number) => {
       dots[id] = null;
       delete dots[id];
     };
@@ -55,6 +55,8 @@ export function InteractiveStars() {
 
       ctx.strokeStyle = 'white';
       ctx.shadowColor = 'white';
+      ctx.shadowBlur = 0;
+
       for (let i = 0; i < initStarsPopulation; i++) {
         stars[i] = new Star({
           id: i,
@@ -65,16 +67,16 @@ export function InteractiveStars() {
           backgroundSpeed: BG_SPEED,
         });
       }
-      ctx.shadowBlur = 0;
+
       animate();
     };
 
     const handleResize = () => {
       resizeCanvas();
-      // reset dots
+
       dots.length = 0;
-      // Reset stars with new dimensions
       stars.length = 0;
+
       for (let i = 0; i < initStarsPopulation; i++) {
         stars[i] = new Star({
           id: i,
@@ -90,12 +92,9 @@ export function InteractiveStars() {
     const animate = () => {
       ctx.clearRect(0, 0, WIDTH, HEIGHT);
 
-      for (const i in stars) {
-        if (stars[i]) stars[i].move();
-      }
-      for (const j in dots) {
-        if (dots[j]) dots[j].move();
-      }
+      for (const i in stars) stars[i]?.move();
+      for (const j in dots) dots[j]?.move();
+
       drawIfMouseMoving();
       requestAnimationFrame(animate);
     };
@@ -104,8 +103,9 @@ export function InteractiveStars() {
       mouseMoving = true;
       mouseX = e.layerX;
       mouseY = e.layerY;
+
       clearInterval(mouseMoveChecker);
-      mouseMoveChecker = setTimeout(function () {
+      mouseMoveChecker = setTimeout(() => {
         mouseMoving = false;
       }, 100);
     };
