@@ -12,7 +12,7 @@ export const Contact = () => {
   const isDesktop = width > 800;
 
   return (
-    <div className="contact-container">
+    <div className="contact-wrap">
       <img src={ProfilePic} alt="Andrew Steinheiser" className="contact-image" />
 
       {isDesktop && <div className="contact-content-divider" />}

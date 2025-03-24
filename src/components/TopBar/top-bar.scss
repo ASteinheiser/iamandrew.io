@@ -1,10 +1,10 @@
-.top-bar-container {
+.top-bar-wrap {
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
   padding: 10px 20px;
 
-  .spacing {
+  .top-bar-inner-wrap {
     display: flex;
     flex-direction: row;
 
@@ -22,7 +22,7 @@
     padding: 2px;
   }
 
-  .top-bar-item-container {
+  .top-bar-item-wrap {
     display: flex;
     flex-direction: row;
 
@@ -49,7 +49,7 @@
 }
 
 @media(max-width: 800px) {
-  .top-bar-container {
+  .top-bar-wrap {
     padding: 10px 10px;
 
     .top-bar-logo {

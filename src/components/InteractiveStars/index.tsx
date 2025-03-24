@@ -171,7 +171,7 @@ export function InteractiveStars() {
   }, []);
 
   return (
-    <div className="interactive-stars-container">
+    <div className="interactive-stars-wrap">
       <canvas id="canvas" ref={canvasRef} />
     </div>
   );

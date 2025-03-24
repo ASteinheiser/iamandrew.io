@@ -17,8 +17,8 @@ interface TopBarProps {
 export const TopBar = ({ active, navigate }: TopBarProps) => {
   return (
     <Headroom>
-      <div className="top-bar-container">
-        <div className="max-width spacing">
+      <div className="top-bar-wrap">
+        <div className="max-width top-bar-inner-wrap">
           <img
             className="top-bar-logo"
             src={Logo}
@@ -26,7 +26,7 @@ export const TopBar = ({ active, navigate }: TopBarProps) => {
             onClick={() => navigate(APP_SECTION.STARS)}
           />
 
-          <div className="top-bar-item-container">
+          <div className="top-bar-item-wrap">
             <div
               className={`top-bar-item ${active === APP_SECTION.WORK ? 'active' : ''}`}
               onClick={() => navigate(APP_SECTION.WORK)}

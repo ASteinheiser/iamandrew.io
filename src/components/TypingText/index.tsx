@@ -21,7 +21,7 @@ export const TypingText = () => {
   }, []);
 
   return (
-    <div className="typing-text-container">
+    <div className="typing-text-wrap">
       <div className="typewrite">
         <span className="typing-text-static">I AM </span>
         <span ref={textRef} className="typing-text"></span>
