@@ -5,12 +5,18 @@ import './typing-text.scss';
 
 const TYPING_TEXT_WORDS = ['ANDREW', 'A DEVELOPER', 'A SKATER', 'A CREATOR'];
 
+let textType: TextType;
+const initTextType = (element: HTMLElement) => {
+  if (textType) return;
+  textType = new TextType({ element, wordRotation: TYPING_TEXT_WORDS });
+};
+
 export const TypingText = () => {
   const textRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     if (textRef.current) {
-      new TextType({ element: textRef.current, wordRotation: TYPING_TEXT_WORDS });
+      initTextType(textRef.current);
     }
   }, []);
 
