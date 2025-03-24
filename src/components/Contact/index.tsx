@@ -19,19 +19,19 @@ export const Contact = () => {
 
       <div className="contact-content">
         <div className="contact-item-wrap">
-          <img src={Mail} alt="email" />
+          <img src={Mail} alt="email" className="icon" />
           <a href="mailto:me@iamandrew.io">me@iamandrew.io</a>
         </div>
 
         <div className="contact-item-wrap">
-          <img src={GitHub} alt="github" />
+          <img src={GitHub} alt="github" className="icon" />
           <a href="https://github.com/asteinheiser" target="_blank" rel="noopener noreferrer">
             github/ASteinheiser
           </a>
         </div>
 
         <div className="contact-item-wrap">
-          <img src={LinkedIn} alt="LinkedIn" />
+          <img src={LinkedIn} alt="LinkedIn" className="icon" />
           <a
             href="https://www.linkedin.com/in/asteinheiser/"
             target="_blank"
@@ -42,7 +42,7 @@ export const Contact = () => {
         </div>
 
         <div className="contact-item-wrap">
-          <img src={Briefcase} alt="briefcase" />
+          <img src={Briefcase} alt="briefcase" className="icon" />
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
             View resume
           </a>
