@@ -10,7 +10,7 @@ export const Footer = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        {'View Source Code'}
+        {'View source code'}
       </a>
     </div>
   );

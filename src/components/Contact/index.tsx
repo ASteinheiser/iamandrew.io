@@ -40,7 +40,7 @@ export const Contact = () => {
         <div className="contact-item-wrap">
           <img src={Briefcase} alt="briefcase" />
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-            View Resume
+            View resume
           </a>
         </div>
       </div>

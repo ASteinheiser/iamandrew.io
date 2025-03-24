@@ -5,7 +5,7 @@
   justify-content: center;
 
   .contact-image {
-    max-height: 248px;
+    height: 250px;
     width: auto;
     border-radius: 50%;
   }
@@ -28,6 +28,11 @@
       a {
         font-size: 24px;
         font-family: 'Montserrat';
+      }
+
+      img {
+        height: 40px;
+        width: auto;
       }
     }
   }
