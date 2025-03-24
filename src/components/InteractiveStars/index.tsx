@@ -125,15 +125,14 @@ export function InteractiveStars() {
       }
 
       const previousDot = getPreviousDot(dots.length, 1);
-      if (!previousDot) return;
 
-      const prevX = previousDot.x;
-      const prevY = previousDot.y;
+      const prevX = previousDot ? previousDot.x : mouseX;
+      const prevY = previousDot ? previousDot.y : mouseY;
 
       const diffX = Math.abs(prevX - mouseX);
       const diffY = Math.abs(prevY - mouseY);
 
-      if (diffX < MIN_DISTANCE || diffY < MIN_DISTANCE) return;
+      if (previousDot && (diffX < MIN_DISTANCE || diffY < MIN_DISTANCE)) return;
 
       let xVariation = Math.random() > 0.5 ? -1 : 1;
       xVariation = xVariation * Math.floor(Math.random() * MAX_DISTANCE) + 1;
