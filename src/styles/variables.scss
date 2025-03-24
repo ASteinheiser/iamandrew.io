@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url(../fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(../fonts/Montserrat-Regular.ttf) format('truetype');
+}
+
+$light-gray: #9b9b9b;
+$gray: #7c7c7c;
+$white: #ffffff;
+$purple: #492f9f;
+$light-purple: #492f9fa7;
+$red: #e20000;
+
+$medium: 800px;
+$large: 1200px;
