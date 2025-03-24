@@ -6,10 +6,10 @@
   padding: 25px 25px 50px;
 
   font-size: 24px;
-  color: var(--purple);
+  color: $purple;
   font-family: 'Montserrat';
 
-  @media(max-width: 800px) {
+  @media(max-width: $medium) {
     font-size: 20px;
   }
 

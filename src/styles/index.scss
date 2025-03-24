@@ -33,7 +33,7 @@ a {
 
   margin-right: 15px;
 
-  @media(max-width: 800px) {
+  @media(max-width: $medium) {
     max-height: 35px;
     max-width: 35px;
 

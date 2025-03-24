@@ -4,7 +4,7 @@
 
   padding: 10px 20px;
 
-  @media(max-width: 800px) {
+  @media(max-width: $medium) {
     padding: 10px 10px;
   }
 
@@ -25,7 +25,7 @@
 
     padding: 2px;
 
-    @media(max-width: 800px) {
+    @media(max-width: $medium) {
       height: 40px;
       width: 40px;
     }
@@ -45,19 +45,19 @@
     cursor: pointer;
     user-select: none;
 
-    @media(max-width: 800px) {
+    @media(max-width: $medium) {
       font-size: 18px;
       padding: 0 10px;
     }
   }
 
   .top-bar-item:hover {
-    color: var(--purple);
+    color: $purple;
     font-weight: 500;
   }
 
   .active {
-    color: var(--purple);
+    color: $purple;
     font-weight: 500;
   }
 }

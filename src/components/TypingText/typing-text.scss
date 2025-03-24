@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: center;
 
-  @media(max-width: 800px) {
+  @media(max-width: $medium) {
     font-size: 40px;
   }
 
@@ -33,16 +33,16 @@
     text-shadow: 0 2px 5px rgba(255, 255, 255, 0.25);
 
     .typing-text-static {
-      color: var(--gray);
+      color: $gray;
     }
 
     .typing-text {
-      color: var(--purple);
+      color: $purple;
     }
 
     .blink-cursor {
       font-size: 56px;
-      color: var(--purple);
+      color: $purple;
 
       animation: blinkCursor .75s steps(1) infinite;
     }

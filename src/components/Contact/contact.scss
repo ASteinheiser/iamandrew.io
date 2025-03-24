@@ -6,7 +6,7 @@
 
   padding: 50px 25px;
 
-  @media(max-width: 800px) {
+  @media(max-width: $medium) {
     flex-direction: column;
 
     padding: 50px 25px 25px;
@@ -23,7 +23,7 @@
   .contact-content-divider {
     width: 1px;
     height: 170px;
-    background-color: var(--purple);
+    background-color: $purple;
 
     margin: 0 50px;
   }
@@ -32,7 +32,7 @@
     display: flex;
     flex-direction: column;
 
-    @media(max-width: 800px) {
+    @media(max-width: $medium) {
       margin-top: 30px;
     }
 
@@ -47,7 +47,7 @@
         font-size: 24px;
         font-family: 'Montserrat';
 
-        @media(max-width: 800px) {
+        @media(max-width: $medium) {
           font-size: 20px;
         }
       }
