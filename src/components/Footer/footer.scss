@@ -9,13 +9,11 @@
   color: var(--purple);
   font-family: 'Montserrat';
 
+  @media(max-width: 800px) {
+    font-size: 20px;
+  }
+
   a {
     margin: 35px auto 0;
-  }
-}
-
-@media(max-width: 800px) {
-  .footer-container {
-    font-size: 20px;
   }
 }
