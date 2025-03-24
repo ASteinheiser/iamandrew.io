@@ -2,17 +2,17 @@ import { useState } from 'react';
 import { scroller } from 'react-scroll';
 import { InView } from 'react-intersection-observer';
 
-import { TopBar } from './components/TopBar';
+import { TopBar, APP_SECTION } from './components/TopBar';
 import { InteractiveStars } from './components/InteractiveStars';
 import { TypingText } from './components/TypingText';
 import { Footer } from './components/Footer';
 import { useScrollUp } from './hooks/use-scroll-up.js';
 
 export const App = () => {
-  const [active, setActive] = useState('home');
+  const [active, setActive] = useState(APP_SECTION.STARS);
   const { isScrollUp } = useScrollUp();
 
-  const navigate = (section: string) => {
+  const navigate = (section: APP_SECTION) => {
     scroller.scrollTo(section, {
       duration: 800,
       delay: 0,
@@ -21,7 +21,7 @@ export const App = () => {
     });
   };
 
-  const changeVisible = (isVisible: boolean, section: string) => {
+  const changeVisible = (isVisible: boolean, section: APP_SECTION) => {
     if (isVisible) {
       setActive(section);
     }
@@ -32,14 +32,11 @@ export const App = () => {
     // sections that stretch past the screen height (especially on Mobile)
     else if (!isVisible && isScrollUp) {
       switch (section) {
-        case 'work':
-          if (active === 'work') setActive('home');
+        case APP_SECTION.WORK:
+          if (active === APP_SECTION.WORK) setActive(APP_SECTION.STARS);
           break;
-        case 'journey':
-          if (active === 'journey') setActive('work');
-          break;
-        case 'contact':
-          if (active === 'contact') setActive('journey');
+        case APP_SECTION.CONTACT:
+          if (active === APP_SECTION.CONTACT) setActive(APP_SECTION.WORK);
           break;
         default:
       }
@@ -50,13 +47,26 @@ export const App = () => {
     <>
       <TopBar active={active} navigate={navigate} />
 
-      <InView onChange={(isVisible) => changeVisible(isVisible, 'home')}>
+      <InView
+        id={APP_SECTION.STARS}
+        onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.STARS)}
+      >
         <InteractiveStars />
         <TypingText />
       </InView>
 
       <div className="max-width">
-        <InView onChange={(isVisible) => changeVisible(isVisible, 'contact')}>
+        <InView
+          id={APP_SECTION.WORK}
+          onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.WORK)}
+        >
+          <div>work</div>
+        </InView>
+
+        <InView
+          id={APP_SECTION.CONTACT}
+          onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.CONTACT)}
+        >
           <Footer />
         </InView>
       </div>
