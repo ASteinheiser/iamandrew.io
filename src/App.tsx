@@ -34,7 +34,7 @@ export const App = () => {
       <InView
         as="div"
         id={APP_SECTION.STARS}
-        threshold={[0.5]}
+        threshold={0.8}
         onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.STARS)}
       >
         <InteractiveStars />
@@ -45,7 +45,7 @@ export const App = () => {
         <InView
           as="div"
           id={APP_SECTION.WORK}
-          threshold={[0.3, 0.7]}
+          threshold={0.3}
           onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.WORK)}
         >
           <Work />
@@ -54,7 +54,7 @@ export const App = () => {
         <InView
           as="div"
           id={APP_SECTION.CONTACT}
-          threshold={[0]}
+          threshold={0.6}
           onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.CONTACT)}
         >
           <Contact />
