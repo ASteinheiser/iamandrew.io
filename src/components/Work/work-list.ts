@@ -59,13 +59,18 @@ export const workList: Array<WorkItem> = [
   },
   {
     title: 'Medium Articles',
-    description: `Here you can read some articles I've written mostly about my experiences writing React RPG.`,
+    description: `Here you can read some articles I wrote about my experiences and learnings from writing React RPG.`,
     link: 'https://medium.com/@andrewsteinheiser',
     image: Medium,
   },
   {
     title: 'Hackster.io Articles',
-    description: `Here you can read some old articles I wrote as an Intern at Octoblu. I was tasked with creating use cases for the IoT platform and documenting the process to inspire other developers.`,
+    description: `
+      Hackster.io contains an archive of old articles I wrote as an Intern at Octoblu.
+      I was tasked with creating use cases for the IoT platform and documenting the
+      process to inspire other developers. Notable projects include: "The Stinker Blinker"
+      and "Gesture Controlled Drone Swarm"!
+    `,
     link: 'https://www.hackster.io/andrewstein',
     image: Hackster,
   },
