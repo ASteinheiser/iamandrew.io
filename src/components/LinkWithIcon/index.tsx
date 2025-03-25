@@ -1,3 +1,5 @@
+import './link-with-icon.scss';
+
 interface LinkWithIconProps {
   text: string;
   alt: string;
