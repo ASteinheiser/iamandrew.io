@@ -12,6 +12,7 @@
   .work-item {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 
     text-decoration: none;
 
@@ -46,7 +47,7 @@
       margin: 15px 0 15px -25px;
 
       .work-item-title {
-        font-size: 32px;
+        font-size: 30px;
         font-weight: bold;
         color: $purple;
         font-family: 'Montserrat';
