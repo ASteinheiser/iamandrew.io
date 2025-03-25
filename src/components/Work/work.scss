@@ -12,6 +12,10 @@
     margin: 0 auto;
   }
 
+  .work-item-focused {
+    transform: scale(1.05);
+  }
+
   .work-item {
     display: flex;
     flex-direction: row;
