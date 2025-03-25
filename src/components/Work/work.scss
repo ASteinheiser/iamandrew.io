@@ -19,9 +19,11 @@
       flex: 0 0 300px;
       height: 200px;
 
-      box-shadow: $shadow-light;
+      box-shadow: $shadow;
       border-radius: $border-radius;
       overflow: hidden;
+
+      z-index: 1;
 
       img {
         width: 100%;
@@ -33,21 +35,30 @@
     .work-item-content {
       display: flex;
       flex-direction: column;
+      flex: 0 0 500px;
+      height: 170px;
 
       background: $white;
       border-radius: $border-radius;
       box-shadow: $shadow-light;
 
+      padding-left: 50px;
+      margin: 15px 0 15px -25px;
+
       .work-item-title {
-        font-size: $font-large;
+        font-size: 32px;
         font-weight: bold;
         color: $purple;
         font-family: 'Montserrat';
+
+        padding: 15px 0 10px;
       }
 
       .work-item-description {
-        font-size: $font-xsmall;
+        font-size: $font-small;
         color: $dark-gray;
+
+        padding-right: 20px;
       }
     }
   }
