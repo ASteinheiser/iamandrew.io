@@ -19,14 +19,19 @@ export const workList: Array<WorkItem> = [
       SunSesh AZ is a weekly longboard meetup that I founded in Tempe, AZ. Partnered with
       Loaded and Orangatang, our goal is to grow the local longboard community "one skater
       at a time". We provide information and resources to help new skaters learn
-      dancing, freestyle or even downhill.
+      dancing, freestyle or even downhill!
     `,
     link: 'https://www.instagram.com/sunsesh_az',
     image: SunSeshAZ,
   },
   {
     title: 'React RPG',
-    description: `React RPG is an open-source game that I created from scratch with React and Redux. Recently, a fork was merged that implements a light version of Dungeons and Dragons: 5th Edition, giving way to React RPG: 2e.`,
+    description: `
+      React RPG is an open-source game that I created from scratch with React and Redux.
+      A fork was created by a group in New Zealand that implements a light version of
+      Dungeons and Dragons: 5th Edition. Recently that fork has been merged, giving way
+      to React RPG: 2e.
+    `,
     link: 'https://react-rpg.com',
     image: ReactRPG,
   },
