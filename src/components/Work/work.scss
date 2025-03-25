@@ -5,11 +5,9 @@
   padding: 50px 20px 20px;
   gap: 75px;
 
-  @media(max-width: $medium) {
-    gap: 20px;
-  }
-
   @media(max-width: 1000px) {
+    gap: 20px;
+
     max-width: 600px;
     margin: 0 auto;
   }
