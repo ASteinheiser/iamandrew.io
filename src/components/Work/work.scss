@@ -24,8 +24,6 @@
       border-radius: $border-radius;
       overflow: hidden;
 
-      z-index: 1;
-
       img {
         width: 100%;
         height: 100%;
@@ -43,8 +41,10 @@
       border-radius: $border-radius;
       box-shadow: $shadow-light;
 
-      padding-left: 50px;
-      margin: 15px 0 15px -25px;
+      padding-left: 25px;
+      padding-right: 50px;
+
+      margin: 15px -25px 15px 0;
 
       .work-item-title {
         font-size: 30px;
@@ -58,9 +58,17 @@
       .work-item-description {
         font-size: $font-small;
         color: $dark-gray;
-
-        padding-right: 20px;
       }
+    }
+  }
+
+  .work-item-reverse {
+    flex-direction: row-reverse;
+
+    .work-item-content {
+      padding-left: 50px;
+      padding-right: 25px;
+      margin: 15px 0 15px -25px;
     }
   }
 }
