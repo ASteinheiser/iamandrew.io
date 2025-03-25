@@ -59,7 +59,12 @@ export const workList: Array<WorkItem> = [
   },
   {
     title: 'Medium Articles',
-    description: `Here you can read some articles I wrote about my experiences and learnings from writing React RPG.`,
+    description: `
+      Here are some articles I wrote about my learnings from creating React RPG.
+      The bottom line is that it's pretty difficult to create a game engine from scratch,
+      but there are some resources out there to help get started. If that interests you,
+      give it a read!
+    `,
     link: 'https://medium.com/@andrewsteinheiser',
     image: Medium,
   },
