@@ -35,7 +35,6 @@ export const App = () => {
       <TopBar active={active} navigate={navigate} />
 
       <InView
-        as="div"
         id={APP_SECTION.STARS}
         threshold={0.8}
         onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.STARS)}
@@ -46,7 +45,6 @@ export const App = () => {
 
       <div className="max-width">
         <InView
-          as="div"
           id={APP_SECTION.WORK}
           threshold={isDesktop ? 0.3 : 0.2}
           onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.WORK)}
@@ -55,7 +53,6 @@ export const App = () => {
         </InView>
 
         <InView
-          as="div"
           id={APP_SECTION.CONTACT}
           threshold={0.6}
           onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.CONTACT)}
