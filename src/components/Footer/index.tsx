@@ -1,5 +1,5 @@
 import { LinkWithIcon } from '../LinkWithIcon';
-import Code from '../../assets/code.svg';
+import Code from '../../assets/icons/code.svg';
 import './footer.scss';
 
 export const Footer = () => {

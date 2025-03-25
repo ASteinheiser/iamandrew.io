@@ -1,6 +1,6 @@
 import Headroom from 'react-headroom';
 
-import Logo from '../../assets/logo.svg';
+import Logo from '../../assets/icons/logo.svg';
 import './top-bar.scss';
 
 export enum APP_SECTION {

@@ -1,10 +1,10 @@
 import { LinkWithIcon } from '../LinkWithIcon';
 import { useWindowSize } from '../../hooks/use-window-size';
-import ProfilePic from '../../assets/me.png';
-import Mail from '../../assets/mail.svg';
-import LinkedIn from '../../assets/linkedin.svg';
-import GitHub from '../../assets/github.svg';
-import Briefcase from '../../assets/briefcase.svg';
+import ProfilePic from '../../assets/images/me.png';
+import Mail from '../../assets/icons/mail.svg';
+import LinkedIn from '../../assets/icons/linkedin.svg';
+import GitHub from '../../assets/icons/github.svg';
+import Briefcase from '../../assets/icons/briefcase.svg';
 import './contact.scss';
 
 export const Contact = () => {
