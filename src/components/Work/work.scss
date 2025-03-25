@@ -1,0 +1,10 @@
+.work-list-wrap {
+  display: flex;
+  flex-direction: column;
+
+  gap: 25px;
+
+  @media(max-width: $medium) {
+    gap: 20px;
+  }
+}
