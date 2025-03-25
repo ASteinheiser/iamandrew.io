@@ -9,6 +9,11 @@
     gap: 20px;
   }
 
+  @media(max-width: 1000px) {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
   .work-item {
     display: flex;
     flex-direction: row;
@@ -60,15 +65,39 @@
         color: $dark-gray;
       }
     }
+
+    @media(max-width: 1000px) {
+      flex-direction: column-reverse;
+
+      .work-item-content {
+        flex: 0 0 100%;
+
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 20px;
+        margin: 15px 0 15px 0;
+      }
+    }
   }
 
   .work-item-reverse {
     flex-direction: row-reverse;
 
+    @media(max-width: 1000px) {
+      flex-direction: column-reverse;
+    }
+
     .work-item-content {
       padding-left: 50px;
       padding-right: 25px;
       margin: 15px 0 15px -25px;
+
+      @media(max-width: 1000px) {
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 20px;
+        margin: 15px 0 15px 0;
+      }
     }
   }
 }
