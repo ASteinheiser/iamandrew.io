@@ -2,9 +2,53 @@
   display: flex;
   flex-direction: column;
 
+  padding: 20px;
   gap: 25px;
 
   @media(max-width: $medium) {
     gap: 20px;
+  }
+
+  .work-item {
+    display: flex;
+    flex-direction: row;
+
+    text-decoration: none;
+
+    .work-item-image {
+      flex: 0 0 300px;
+      height: 200px;
+
+      box-shadow: $shadow-light;
+      border-radius: $border-radius;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .work-item-content {
+      display: flex;
+      flex-direction: column;
+
+      background: $white;
+      border-radius: $border-radius;
+      box-shadow: $shadow-light;
+
+      .work-item-title {
+        font-size: $font-large;
+        font-weight: bold;
+        color: $purple;
+        font-family: 'Montserrat';
+      }
+
+      .work-item-description {
+        font-size: $font-xsmall;
+        color: $dark-gray;
+      }
+    }
   }
 }
