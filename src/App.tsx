@@ -8,16 +8,18 @@ import { TypingText } from './components/TypingText';
 import { Work } from './components/Work';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { useWindowSize } from './hooks/use-window-size';
 
 export const App = () => {
   const [active, setActive] = useState(APP_SECTION.STARS);
+  const { width } = useWindowSize();
 
   const navigate = (section: APP_SECTION) => {
     scroller.scrollTo(section, {
       duration: 800,
       delay: 0,
       smooth: 'easeInOutQuart',
-      offset: -70,
+      offset: width > 800 ? -70 : -60,
     });
   };
 
@@ -45,7 +47,7 @@ export const App = () => {
         <InView
           as="div"
           id={APP_SECTION.WORK}
-          threshold={0.3}
+          threshold={0.2}
           onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.WORK)}
         >
           <Work />
