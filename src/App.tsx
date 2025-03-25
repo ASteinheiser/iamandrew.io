@@ -8,11 +8,9 @@ import { TypingText } from './components/TypingText';
 import { Work } from './components/Work';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { useScrollUp } from './hooks/use-scroll-up.js';
 
 export const App = () => {
   const [active, setActive] = useState(APP_SECTION.STARS);
-  const { isScrollUp } = useScrollUp();
 
   const navigate = (section: APP_SECTION) => {
     scroller.scrollTo(section, {
@@ -27,22 +25,6 @@ export const App = () => {
     if (isVisible) {
       setActive(section);
     }
-    // handle case for switch sections when scrolling up
-    // because the sensor component either detects elements
-    // completely in view, or based off offset from top of elements.
-    // this handles switching 'active' sections when scrolling up into
-    // sections that stretch past the screen height (especially on Mobile)
-    else if (!isVisible && isScrollUp) {
-      switch (section) {
-        case APP_SECTION.WORK:
-          if (active === APP_SECTION.WORK) setActive(APP_SECTION.STARS);
-          break;
-        case APP_SECTION.CONTACT:
-          if (active === APP_SECTION.CONTACT) setActive(APP_SECTION.WORK);
-          break;
-        default:
-      }
-    }
   };
 
   return (
@@ -50,7 +32,9 @@ export const App = () => {
       <TopBar active={active} navigate={navigate} />
 
       <InView
+        as="div"
         id={APP_SECTION.STARS}
+        threshold={[0.5]}
         onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.STARS)}
       >
         <InteractiveStars />
@@ -59,14 +43,18 @@ export const App = () => {
 
       <div className="max-width">
         <InView
+          as="div"
           id={APP_SECTION.WORK}
+          threshold={[0.3, 0.7]}
           onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.WORK)}
         >
           <Work />
         </InView>
 
         <InView
+          as="div"
           id={APP_SECTION.CONTACT}
+          threshold={[0]}
           onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.CONTACT)}
         >
           <Contact />
