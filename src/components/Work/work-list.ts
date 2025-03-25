@@ -41,14 +41,19 @@ export const workList: Array<WorkItem> = [
       Amp Skate was a web app to foster community, provide information and teach people
       how to learn longboard tricks. Working with a team from Los Angeles and Italy, I
       led the development of the web app, API and CMS that helped amp up skaters in cities
-      all over the world.
+      all over the world!
     `,
     link: 'https://www.instagram.com/amp__skate',
     image: AmpSkate,
   },
   {
     title: 'SAVG Thread',
-    description: `SAVG Thread is a clothing brand that I founded in Tempe, AZ after experimenting with some custom cut and sew peices. Our Kimonos were featured on the runways, the local rave shop and on the back of a debuting rockstar.`,
+    description: `
+      SAVG Thread was a clothing brand that I founded in Tempe, AZ. I experimented with
+      embroidery, bleaching and cut 'n sew. By working with a local manufacturer, I
+      produced a run of hand-made kimonos. The kimono design was even featured at the
+      runway of PHX Fashion Week!
+    `,
     link: 'https://www.instagram.com/savgthread',
     image: SAVGThread,
   },
