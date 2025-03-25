@@ -30,4 +30,10 @@ This project was bootstrapped with [Vite](https://vite.dev/)
 
 This project uses [Github Pages](https://pages.github.com/) for deployment and hosting.
 
-To deploy, run: `pnpm deploy`
+1. Install the dependencies
+
+    `pnpm i`
+
+1. Deploy to Github Pages
+
+    `pnpm run deploy`
