@@ -14,7 +14,11 @@
   }
 
   .footer-link {
-    padding-top: 35px;
     align-self: center;
+    padding-top: 35px;
+
+    @media(max-width: $medium) {
+      padding-top: 20px;
+    }
   }
 }
