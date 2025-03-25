@@ -21,7 +21,7 @@ export const workList: Array<WorkItem> = [
   },
   {
     title: 'React RPG',
-    description: `React RPG is an open-source game that I created from scratch with React and Redux. Over the last few years, it's gathered 350 stars on Github. There was even a community fork that implemented a light version of Dungeons and Dragons: 5th Edition, which has been merged, giving way to React RPG: 2nd Edition, or React RPG: 2e.`,
+    description: `React RPG is an open-source game that I created from scratch with React and Redux. Recently, a fork was merged that implements a light version of Dungeons and Dragons: 5th Edition, giving way to React RPG: 2e.`,
     link: 'https://react-rpg.com',
     image: ReactRPG,
   },
