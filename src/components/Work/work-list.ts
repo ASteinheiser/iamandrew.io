@@ -62,7 +62,7 @@ export const workList: Array<WorkItem> = [
     description: `
       Here are some articles I wrote about my learnings from creating React RPG.
       The bottom line is that it's pretty difficult to create a game engine from scratch,
-      but there are some resources out there to help get started. If that interests you,
+      but there are some resources out there to help get started. If that sounds interesting,
       give it a read!
     `,
     link: 'https://medium.com/@andrewsteinheiser',
