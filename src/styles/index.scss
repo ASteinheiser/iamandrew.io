@@ -11,32 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  color: $purple;
-  text-decoration: none;
-
-  padding-bottom: 4px;
-  border-bottom: 1px solid $purple;
-}
-
 .max-width {
   max-width: $large;
   margin: auto;
-}
-
-.icon {
-  height: 100%;
-  width: auto;
-
-  max-height: 40px;
-  max-width: 40px;
-
-  margin-right: 15px;
-
-  @media(max-width: $medium) {
-    max-height: 35px;
-    max-width: 35px;
-
-    margin-right: 10px;
-  }
 }
