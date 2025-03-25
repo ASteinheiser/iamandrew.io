@@ -28,6 +28,8 @@
     @media(max-width: $medium) {
       height: 40px;
       width: 40px;
+
+      padding: 0;
     }
   }
 
@@ -39,14 +41,14 @@
   }
 
   .top-bar-item {
-    font-size: 20px;
+    font-size: $font-medium;
     padding: 0 15px;
 
     cursor: pointer;
     user-select: none;
 
     @media(max-width: $medium) {
-      font-size: 18px;
+      font-size: $font-small;
       padding: 0 10px;
     }
   }
