@@ -15,7 +15,12 @@ interface WorkItem {
 export const workList: Array<WorkItem> = [
   {
     title: 'SunSesh AZ',
-    description: `SunSesh AZ is a weekly longboard dancing and freestyle meetup in Tempe, AZ, partnered with Loaded and Orangatang. I founded this meetup as a way to grow the local longboard dancing community.`,
+    description: `
+      SunSesh AZ is a weekly longboard meetup that I founded in Tempe, AZ. Partnered with
+      Loaded and Orangatang, our goal is to grow the local longboard community "one skater
+      at a time". We provide information and resources to help new skaters learn
+      dancing, freestyle or even downhill.
+    `,
     link: 'https://www.instagram.com/sunsesh_az',
     image: SunSeshAZ,
   },
