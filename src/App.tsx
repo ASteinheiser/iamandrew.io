@@ -14,12 +14,14 @@ export const App = () => {
   const [active, setActive] = useState(APP_SECTION.STARS);
   const { width } = useWindowSize();
 
+  const isDesktop = width > 800;
+
   const navigate = (section: APP_SECTION) => {
     scroller.scrollTo(section, {
       duration: 800,
       delay: 0,
       smooth: 'easeInOutQuart',
-      offset: width > 800 ? -70 : -60,
+      offset: isDesktop ? -70 : -60,
     });
   };
 
@@ -47,7 +49,7 @@ export const App = () => {
         <InView
           as="div"
           id={APP_SECTION.WORK}
-          threshold={0.2}
+          threshold={isDesktop ? 0.3 : 0.2}
           onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.WORK)}
         >
           <Work />
