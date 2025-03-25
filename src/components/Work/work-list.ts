@@ -30,14 +30,19 @@ export const workList: Array<WorkItem> = [
       React RPG is an open-source game that I created from scratch with React and Redux.
       A fork was created by a group in New Zealand that implements a light version of
       Dungeons and Dragons: 5th Edition. Recently that fork has been merged, giving way
-      to React RPG: 2e.
+      to React RPG: 2nd Edition!
     `,
     link: 'https://react-rpg.com',
     image: ReactRPG,
   },
   {
     title: 'Amp Skate',
-    description: `Amp Skate is a web app to foster community, provide information and teach people how to learn longboard tricks. I led the development of the web app, API and CMS that served over 500 active users per month.`,
+    description: `
+      Amp Skate was a web app to foster community, provide information and teach people
+      how to learn longboard tricks. Working with a team from Los Angeles and Italy, I
+      led the development of the web app, API and CMS that helped amp up skaters in cities
+      all over the world.
+    `,
     link: 'https://www.instagram.com/amp__skate',
     image: AmpSkate,
   },
