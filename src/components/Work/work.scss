@@ -22,8 +22,8 @@
     text-decoration: none;
 
     .work-item-image {
-      flex: 0 0 300px;
-      height: 200px;
+      flex: 0 0 400px;
+      height: 240px;
 
       box-shadow: $shadow;
       border-radius: $border-radius;
@@ -39,8 +39,8 @@
     .work-item-content {
       display: flex;
       flex-direction: column;
-      flex: 0 0 500px;
-      height: 170px;
+      flex: 0 0 400px;
+      height: 210px;
 
       background: $white;
       border-radius: $border-radius;
@@ -76,7 +76,7 @@
         padding-right: 25px;
         padding-bottom: 20px;
         padding-top: 25px;
-        margin: -25px 25px 15px 25px;
+        margin: -25px 20px 15px 20px;
       }
     }
   }
@@ -98,7 +98,7 @@
         padding-right: 25px;
         padding-bottom: 20px;
         padding-top: 25px;
-        margin: -25px 25px 15px 25px;
+        margin: -25px 20px 15px 20px;
       }
     }
   }
