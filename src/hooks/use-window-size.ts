@@ -16,5 +16,9 @@ export const useWindowSize = () => {
     };
   }, []);
 
-  return { width, height };
+  return {
+    width,
+    height,
+    isDesktop: width > 800,
+  };
 };

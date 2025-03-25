@@ -11,10 +11,9 @@ import { Footer } from './components/Footer';
 import { useWindowSize } from './hooks/use-window-size';
 
 export const App = () => {
-  const [active, setActive] = useState(APP_SECTION.STARS);
-  const { width } = useWindowSize();
+  const { isDesktop } = useWindowSize();
 
-  const isDesktop = width > 800;
+  const [active, setActive] = useState(APP_SECTION.STARS);
 
   const navigate = (section: APP_SECTION) => {
     scroller.scrollTo(section, {

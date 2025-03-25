@@ -8,9 +8,7 @@ import Briefcase from '../../assets/icons/briefcase.svg';
 import './contact.scss';
 
 export const Contact = () => {
-  const { width } = useWindowSize();
-
-  const isDesktop = width > 800;
+  const { isDesktop } = useWindowSize();
 
   return (
     <div className="contact-wrap">
