@@ -35,22 +35,5 @@
     @media(max-width: $medium) {
       margin-top: 30px;
     }
-
-    .contact-item-wrap {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-
-      margin: 10px 0 10px;
-
-      a {
-        font-size: $font-large;
-        font-family: 'Montserrat';
-
-        @media(max-width: $medium) {
-          font-size: $font-medium;
-        }
-      }
-    }
   }
 }

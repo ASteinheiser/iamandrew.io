@@ -1,3 +1,4 @@
+import { LinkWithIcon } from '../LinkWithIcon';
 import { useWindowSize } from '../../hooks/use-window-size';
 import ProfilePic from '../../assets/me.png';
 import Mail from '../../assets/mail.svg';
@@ -18,35 +19,30 @@ export const Contact = () => {
       {isDesktop && <div className="contact-content-divider" />}
 
       <div className="contact-content">
-        <div className="contact-item-wrap">
-          <img src={Mail} alt="email" className="icon" />
-          <a href="mailto:me@iamandrew.io">me@iamandrew.io</a>
-        </div>
-
-        <div className="contact-item-wrap">
-          <img src={GitHub} alt="github" className="icon" />
-          <a href="https://github.com/asteinheiser" target="_blank" rel="noopener noreferrer">
-            github/ASteinheiser
-          </a>
-        </div>
-
-        <div className="contact-item-wrap">
-          <img src={LinkedIn} alt="LinkedIn" className="icon" />
-          <a
-            href="https://www.linkedin.com/in/asteinheiser/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            linkedin/ASteinheiser
-          </a>
-        </div>
-
-        <div className="contact-item-wrap">
-          <img src={Briefcase} alt="briefcase" className="icon" />
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-            View resume
-          </a>
-        </div>
+        <LinkWithIcon
+          text="me@iamandrew.io"
+          alt="email"
+          icon={Mail}
+          href="mailto:me@iamandrew.io"
+        />
+        <LinkWithIcon
+          text="github/ASteinheiser"
+          alt="github"
+          icon={GitHub}
+          href="https://github.com/asteinheiser"
+        />
+        <LinkWithIcon
+          text="linkedin/ASteinheiser"
+          alt="linkedin"
+          icon={LinkedIn}
+          href="https://www.linkedin.com/in/asteinheiser/"
+        />
+        <LinkWithIcon
+          text="View latest resume"
+          alt="briefcase"
+          icon={Briefcase}
+          href="/resume.pdf"
+        />
       </div>
     </div>
   );
