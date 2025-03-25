@@ -60,7 +60,6 @@
 
       .work-item-title {
         font-size: 30px;
-        font-weight: bold;
         color: $purple;
         font-family: 'Montserrat';
 
@@ -68,6 +67,8 @@
       }
 
       .work-item-description {
+        font-family: 'Roboto Thin';
+        font-weight: bold;
         font-size: $font-small;
         color: $dark-gray;
       }
