@@ -11,7 +11,12 @@ import { Footer } from './components/Footer';
 import { useWindowSize } from './hooks/use-window-size';
 
 export const App = () => {
-  const { isDesktop } = useWindowSize();
+  const { isDesktop, width } = useWindowSize();
+  const isXSmallMobile = width <= 400;
+
+  let workSectionThreshold = 0.2;
+  if (isDesktop) workSectionThreshold = 0.3;
+  if (isXSmallMobile) workSectionThreshold = 0.1;
 
   const [active, setActive] = useState(APP_SECTION.STARS);
 
@@ -46,7 +51,7 @@ export const App = () => {
       <div className="max-width">
         <InView
           id={APP_SECTION.WORK}
-          threshold={isDesktop ? 0.3 : 0.2}
+          threshold={workSectionThreshold}
           onChange={(isVisible) => changeVisible(isVisible, APP_SECTION.WORK)}
         >
           <Work />
