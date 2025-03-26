@@ -16,7 +16,7 @@ interface TopBarProps {
 
 export const TopBar = ({ active, navigate }: TopBarProps) => {
   return (
-    <Headroom>
+    <Headroom style={{ zIndex: 2 }}>
       <div className="top-bar-wrap">
         <div className="max-width top-bar-inner-wrap">
           <img
