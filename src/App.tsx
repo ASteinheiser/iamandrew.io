@@ -11,7 +11,8 @@ import { Footer } from './components/Footer';
 import { useWindowSize } from './hooks/use-window-size';
 
 export const App = () => {
-  const { isDesktop, width } = useWindowSize();
+  const { width } = useWindowSize();
+  const isDesktop = width > 1000;
   const isXSmallMobile = width <= 400;
 
   let workSectionThreshold = 0.2;

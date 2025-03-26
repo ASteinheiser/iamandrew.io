@@ -8,13 +8,15 @@ import Briefcase from '../../assets/icons/briefcase.svg';
 import './contact.scss';
 
 export const Contact = () => {
-  const { isDesktop } = useWindowSize();
+  const { width } = useWindowSize();
+
+  const isTabletOrAbove = width > 800;
 
   return (
     <div className="contact-wrap">
       <img src={ProfilePic} alt="Andrew Steinheiser" className="contact-image" />
 
-      {isDesktop && <div className="contact-content-divider" />}
+      {isTabletOrAbove && <div className="contact-content-divider" />}
 
       <div className="contact-content">
         <LinkWithIcon
