@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { TextType } from './text-type';
 import './typing-text.scss';
 
-const TYPING_TEXT_WORDS = ['ANDREW', 'A DEVELOPER', 'A SKATER', 'A CREATOR'];
+const TYPING_TEXT_WORDS = ['ANDREW', 'A FULLSTACK DEV', 'A SKATER', 'A CREATOR'];
 
 let textType: TextType;
 const initTextType = (element: HTMLElement) => {
