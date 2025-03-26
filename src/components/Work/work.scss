@@ -33,7 +33,7 @@
 
     .work-item-image {
       flex: 0 0 400px;
-      max-height: 240px;
+      max-height: 250px;
 
       box-shadow: $shadow;
       border-radius: $border-radius;
@@ -50,7 +50,7 @@
       display: flex;
       flex-direction: column;
       flex: 0 0 400px;
-      height: 210px;
+      height: 220px;
 
       background: $white;
       border: 1px solid $purple;
@@ -75,6 +75,7 @@
         font-weight: bold;
         font-size: $font-small;
         color: $dark-gray;
+        line-height: 1.3;
       }
     }
 

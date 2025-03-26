@@ -30,7 +30,7 @@ export const workList: Array<WorkItem> = [
       React RPG is an open-source game that I created from scratch with React and Redux.
       A fork was created by a group in New Zealand that implements a light version of
       Dungeons and Dragons: 5th Edition. Recently that fork has been merged, giving way
-      to React RPG: 2nd Edition!
+      to React RPG: 2e!
     `,
     link: 'https://react-rpg.com',
     image: ReactRPG,
@@ -38,10 +38,10 @@ export const workList: Array<WorkItem> = [
   {
     title: 'Amp Skate',
     description: `
-      Amp Skate was a web app to foster community, provide information and teach people
+      Our goal with Amp Skate was to foster community, provide information and teach people
       how to learn longboard tricks. Working with a team from Los Angeles and Italy, I
-      led the development of the web app, API and CMS that helped amp up skaters in cities
-      all over the world!
+      led the development of the web app, API and CMS used by skaters in cities around
+      the world!
     `,
     link: 'https://www.instagram.com/amp__skate',
     image: AmpSkate,
@@ -51,8 +51,8 @@ export const workList: Array<WorkItem> = [
     description: `
       SAVG Thread was a clothing brand that I founded in Tempe, AZ. I experimented with
       embroidery, bleaching and cut 'n sew. By working with a local manufacturer, I
-      produced a run of hand-made kimonos. The kimono design was even featured at the
-      runway of PHX Fashion Week!
+      produced a run of hand-made kimonos, which got featured at the runway of PHX
+      Fashion Week!
     `,
     link: 'https://www.instagram.com/savgthread',
     image: SAVGThread,
@@ -71,7 +71,7 @@ export const workList: Array<WorkItem> = [
   {
     title: 'Hackster.io Articles',
     description: `
-      Hackster.io contains an archive of old articles I wrote as an Intern at Octoblu.
+      Hackster.io contains old articles I wrote as an Intern at Octoblu.
       I was tasked with creating use cases for the IoT platform and documenting the
       process to inspire other developers. Notable projects include: "The Stinker Blinker"
       and "Gesture Controlled Drone Swarm"!
