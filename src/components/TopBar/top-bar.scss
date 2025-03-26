@@ -49,9 +49,11 @@
     cursor: pointer;
     user-select: none;
 
-    &:hover {
-      color: $purple;
-      font-weight: 500;
+    @media(min-width: 1000px) {
+      &:hover {
+        color: $purple;
+        font-weight: 500;
+      }
     }
 
     @media(max-width: $medium) {
