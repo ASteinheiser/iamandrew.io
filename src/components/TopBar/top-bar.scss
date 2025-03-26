@@ -49,15 +49,15 @@
     cursor: pointer;
     user-select: none;
 
+    &:hover {
+      color: $purple;
+      font-weight: 500;
+    }
+
     @media(max-width: $medium) {
       font-size: $font-small;
       padding: 0 10px;
     }
-  }
-
-  .top-bar-item:hover {
-    color: $purple;
-    font-weight: 500;
   }
 
   .active {
