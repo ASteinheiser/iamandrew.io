@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { InView } from 'react-intersection-observer';
 import { workList } from './work-list';
-import { isMobile } from 'react-device-detect';
+import { isMobile, isDesktop } from 'react-device-detect';
 import './work.scss';
 
 export const Work = () => {
@@ -27,6 +27,7 @@ export const Work = () => {
               work-item
               ${index % 2 === 0 ? 'work-item-reverse' : ''}
               ${isMobile && visibleId === index ? 'work-item-focused' : ''}
+              ${isDesktop && 'work-item-hover'}
             `}
           >
             <div className="work-item-content">

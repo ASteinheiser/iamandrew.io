@@ -16,6 +16,12 @@
     transform: scale(1.05);
   }
 
+  .work-item-hover {
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
   .work-item {
     display: flex;
     flex-direction: row;
@@ -26,10 +32,6 @@
     margin: 0 auto;
 
     transition: all 0.3s ease-in-out;
-
-    &:hover {
-      transform: scale(1.05);
-    }
 
     .work-item-image {
       flex: 0 0 400px;
