@@ -49,16 +49,16 @@
     cursor: pointer;
     user-select: none;
 
-    @media(min-width: 1000px) {
-      &:hover {
-        color: $purple;
-        font-weight: 500;
-      }
-    }
-
     @media(max-width: $medium) {
       font-size: $font-small;
       padding: 0 10px;
+    }
+  }
+
+  .top-bar-item-hover {
+    &:hover {
+      color: $purple;
+      font-weight: 500;
     }
   }
 

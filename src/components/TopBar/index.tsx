@@ -1,5 +1,5 @@
 import Headroom from 'react-headroom';
-
+import { isDesktop } from 'react-device-detect';
 import Logo from '../../assets/icons/logo.svg';
 import './top-bar.scss';
 
@@ -28,14 +28,22 @@ export const TopBar = ({ active, navigate }: TopBarProps) => {
 
           <div className="top-bar-item-wrap">
             <div
-              className={`top-bar-item ${active === APP_SECTION.WORK ? 'active' : ''}`}
+              className={`
+                top-bar-item
+                ${active === APP_SECTION.WORK ? ' active' : ''}
+                ${isDesktop ? ' top-bar-item-hover' : ''}
+              `}
               onClick={() => navigate(APP_SECTION.WORK)}
             >
               {'WORK_'}
             </div>
 
             <div
-              className={`top-bar-item ${active === APP_SECTION.CONTACT ? 'active' : ''}`}
+              className={`
+                top-bar-item
+                ${active === APP_SECTION.CONTACT ? ' active' : ''}
+                ${isDesktop ? ' top-bar-item-hover' : ''}
+              `}
               onClick={() => navigate(APP_SECTION.CONTACT)}
             >
               {'CONTACT_'}

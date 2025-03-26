@@ -14,6 +14,7 @@ export const App = () => {
   const { width } = useWindowSize();
   const isDesktop = width > 1000;
   const isXSmallMobile = width <= 400;
+  const isTabletOrAbove = width > 800;
 
   let workSectionThreshold = 0.2;
   if (isDesktop) workSectionThreshold = 0.3;
@@ -26,7 +27,7 @@ export const App = () => {
       duration: 800,
       delay: 0,
       smooth: 'easeInOutQuart',
-      offset: isDesktop ? -70 : -60,
+      offset: isTabletOrAbove ? -70 : -60,
     });
   };
 
