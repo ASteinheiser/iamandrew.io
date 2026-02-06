@@ -2,8 +2,8 @@ import SunSeshAZ from '../../assets/images/sunsesh-az.png';
 import ReactRPG from '../../assets/images/react-rpg.png';
 import AmpSkate from '../../assets/images/amp-skate.png';
 import SAVGThread from '../../assets/images/savg-thread.png';
-import Medium from '../../assets/images/medium.png';
-import Hackster from '../../assets/images/hackster.png';
+import OreRushOnline from '../../assets/images/ore-rush-online.png';
+import TSOnlineGame from '../../assets/images/ts-online-game.png';
 
 interface WorkItem {
   title: string;
@@ -13,6 +13,28 @@ interface WorkItem {
 }
 
 export const workList: Array<WorkItem> = [
+  {
+    title: 'ORO - Ore Rush Online',
+    description: `
+      Ore Rush Online (ORO) is a mining MMO made entirely with TypeScript,
+      using the TS Online Game Template. Follow my progress as I build my first
+      online game! I'll be updating the developer log as I develop new features.
+      I look forward to experimenting and hearing your feedback!
+    `,
+    link: 'https://ore-rush.online',
+    image: OreRushOnline,
+  },
+  {
+    title: 'TS Online Game Template',
+    description: `
+      A template for creating real-time, online games using TypeScript! Quickly create
+      mmo-style games using React + Phaser for rendering, Colyseus for websockets and
+      Electron for native builds! This monorepo contains everything you need to roll out
+      updates to your own online game as you build it!
+    `,
+    link: 'https://ts-game.online',
+    image: TSOnlineGame,
+  },
   {
     title: 'SunSesh AZ',
     description: `
@@ -56,27 +78,5 @@ export const workList: Array<WorkItem> = [
     `,
     link: 'https://www.instagram.com/savgthread',
     image: SAVGThread,
-  },
-  {
-    title: 'Medium Articles',
-    description: `
-      Here are some articles I wrote about my learnings from creating React RPG.
-      The bottom line is that it's pretty difficult to create a game engine from scratch,
-      but there are some resources out there to help get started. If that sounds interesting,
-      give it a read!
-    `,
-    link: 'https://medium.com/@andrewsteinheiser',
-    image: Medium,
-  },
-  {
-    title: 'Hackster.io Articles',
-    description: `
-      Hackster.io contains old articles I wrote as an Intern at Octoblu.
-      I was tasked with creating use cases for the IoT platform and documenting the
-      process to inspire other developers. Notable projects include: "The Stinker Blinker"
-      and "Gesture Controlled Drone Swarm"!
-    `,
-    link: 'https://www.hackster.io/andrewstein',
-    image: Hackster,
   },
 ];
